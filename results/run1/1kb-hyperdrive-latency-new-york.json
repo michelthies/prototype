@@ -1,0 +1,72 @@
+{
+  "metadata": {
+    "size": "1kb",
+    "pattern": "hyperdrive",
+    "suite": "latency",
+    "region": "new-york"
+  },
+  "data": {
+    "test": "latency",
+    "pattern": "hyperdrive",
+    "region": "new-york",
+    "workerUrl": "https://hyperdrive-cfworker.ZZZZZZZZZZZZZ.workers.dev",
+    "iterations": 200,
+    "successPct": 100,
+    "dropped": 0,
+    "latencies": {
+      "min": 107.202579,
+      "p50": 116.5537175,
+      "p95": 230.15259204999995,
+      "p99": 332.60137617999976,
+      "max": 439.153993,
+      "count": 200
+    },
+    "warmup": {
+      "ttfb_ms": {
+        "min": 235.905605,
+        "p50": 235.905605,
+        "p99": 235.905605,
+        "max": 235.905605,
+        "count": 1
+      },
+      "success_rate": 1
+    },
+    "connection_metrics": {
+      "peak_connections": 5,
+      "idle_after_run": 5
+    },
+    "colo_distribution": {
+      "EWR": 200
+    },
+    "placement_colo_distribution": {
+      "FRA": 200
+    },
+    "isolate_tracking": {
+      "isolate_count": 22,
+      "isolate_ids": [
+        "7dc34357-a7ba-44df-a982-7559dbd729f9",
+        "319e3ee5-e2ff-461e-97c7-340f7c4d56d7",
+        "d5600d7e-d73f-479e-b1d1-5e1fe149fe87",
+        "af37c268-5d6f-4cc9-84de-bb597b11951f",
+        "a0ddc6ec-606f-4733-b2fe-1857297c52d2",
+        "8ba01ddb-8062-415e-a571-df776ffcb023",
+        "19e27f07-3c97-433d-8378-ebb298cccc4e",
+        "1b4a45ba-504e-4f4c-98c5-097d600b03b0",
+        "6e8fc616-8128-427b-a6e0-cb83d08b8c3d",
+        "fb3d94fc-4eca-4bff-a857-bcbf9dd7146a",
+        "a68bffd3-5ea2-435b-84b1-0962ba6a4126",
+        "73f41033-76fa-41c3-8480-4cef0853c995",
+        "33e8d483-9ec4-4a37-810c-c1373423c761",
+        "dd73f75e-dfff-4f9c-bcaf-17d1d22d49e8",
+        "8d1529f4-266a-406f-a483-9664ebddeca9",
+        "2ac39870-1bc9-4a99-9e97-9c568a8b5d00",
+        "b1722a4b-da0f-4f7a-8a3c-179213e15a15",
+        "83976b6c-b2c3-4286-94e2-99ae8f148885",
+        "eed4c220-d03d-4a78-a06b-531042b62767",
+        "aeed81ad-93a5-4a3d-a59e-c79222f68a81",
+        "f31f09bd-a131-4b63-b892-6f9b4b22bca5",
+        "645fa79f-2c25-4e02-83a9-c07e601014a2"
+      ]
+    }
+  }
+}

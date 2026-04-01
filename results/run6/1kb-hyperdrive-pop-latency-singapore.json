@@ -1,0 +1,48 @@
+{
+  "metadata": {
+    "size": "1kb",
+    "pattern": "hyperdrive-pop",
+    "suite": "latency",
+    "region": "singapore"
+  },
+  "data": {
+    "test": "latency",
+    "pattern": "hyperdrive-pop",
+    "region": "singapore",
+    "workerUrl": "https://hyperdrive-cfworker-pop.ZZZZZZZZZZZZZ.workers.dev",
+    "iterations": 200,
+    "successPct": 100,
+    "dropped": 0,
+    "latencies": {
+      "min": 170.750062,
+      "p50": 176.524785,
+      "p95": 186.64519484999997,
+      "p99": 270.5048059999999,
+      "max": 343.455745,
+      "count": 200
+    },
+    "warmup": {
+      "ttfb_ms": {
+        "min": 309.132458,
+        "p50": 309.132458,
+        "p99": 309.132458,
+        "max": 309.132458,
+        "count": 1
+      },
+      "success_rate": 1
+    },
+    "connection_metrics": {
+      "peak_connections": 5,
+      "idle_after_run": 5
+    },
+    "colo_distribution": {
+      "SIN": 200
+    },
+    "isolate_tracking": {
+      "isolate_count": 1,
+      "isolate_ids": [
+        "bf6a622e-ca3a-4ea9-ba91-0f6a3c96a73e"
+      ]
+    }
+  }
+}

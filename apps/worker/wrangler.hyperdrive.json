@@ -1,0 +1,30 @@
+{
+  "name": "hyperdrive-cfworker",
+  "main": "src/index.ts",
+  "compatibility_date": "2026-02-14",
+  "compatibility_flags": [
+    "nodejs_compat"
+  ],
+  "vars": {
+    "DB_CLIENT": "hyperdrive",
+    "NODE_ENV": "production",
+    "JWT_SECRET": "YYYYYYYYYYYYYYYYYYYYYYY",
+    "DB_URL": "postgresql://agency_hyperdrive:XXXXXXXXXXXXXXXXXXXXXXX@TTTTTTTTTT:5432/tenant_db",
+    "POSTGREST_URL": "https://static.WWWWWWclients.your-server.de"
+  },
+  "hyperdrive": [
+    {
+      "binding": "HYPERDRIVE",
+      "id": "QQQQQQQQQQQQQQQQQQQ"
+    }
+  ],
+  "placement": {
+    "host": "TTTTTTTTTT:5432"
+  },
+  "observability": {
+    "logs": {
+      "enabled": true,
+      "invocation_logs": true
+    }
+  }
+}

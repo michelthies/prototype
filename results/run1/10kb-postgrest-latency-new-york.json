@@ -1,0 +1,71 @@
+{
+  "metadata": {
+    "size": "10kb",
+    "pattern": "postgrest",
+    "suite": "latency",
+    "region": "new-york"
+  },
+  "data": {
+    "test": "latency",
+    "pattern": "postgrest",
+    "region": "new-york",
+    "workerUrl": "https://postgrest-cfworker.ZZZZZZZZZZZZZ.workers.dev",
+    "iterations": 200,
+    "successPct": 100,
+    "dropped": 0,
+    "latencies": {
+      "min": 108.120932,
+      "p50": 116.7465645,
+      "p95": 255.16479424999983,
+      "p99": 316.21910741999994,
+      "max": 476.706186,
+      "count": 200
+    },
+    "warmup": {
+      "ttfb_ms": {
+        "min": 274.382189,
+        "p50": 274.382189,
+        "p99": 274.382189,
+        "max": 274.382189,
+        "count": 1
+      },
+      "success_rate": 1
+    },
+    "connection_metrics": {
+      "peak_connections": 2,
+      "idle_after_run": 2
+    },
+    "colo_distribution": {
+      "EWR": 200
+    },
+    "placement_colo_distribution": {
+      "FRA": 200
+    },
+    "isolate_tracking": {
+      "isolate_count": 21,
+      "isolate_ids": [
+        "995d3326-7567-4d5a-b412-07f192a1d4f2",
+        "685decdc-acf0-4103-8e6f-428375d4baae",
+        "b20e4904-f7de-4200-ad56-0f253d1ad8ce",
+        "5c7127bf-e420-4a64-9b4d-27de7172ee00",
+        "6383524c-cbb9-4e42-8c82-9434a0a67ff4",
+        "28e20e03-ef66-4d6e-b781-18e81cf943a9",
+        "6b5b9665-466e-4a15-83ac-7e817ad9b797",
+        "2ddcbc8b-7190-4a07-a47a-5c2d925872c6",
+        "d9e4edc2-4eac-457d-9c0a-88d13e04843a",
+        "d8c6145d-8ad6-48c3-a456-39efaa38903e",
+        "762f3897-b726-449f-892c-96427cf589f4",
+        "ce27c501-ba11-4b23-bb64-684e2d6bbc5d",
+        "41ba9c0e-a8ef-42e9-9317-b8cfe76498de",
+        "f565e556-4528-4a7a-b17f-62cea7215cd5",
+        "fc247a8b-acef-4b7b-be6e-09053c82c94b",
+        "711310e8-8d13-4969-bb3f-b794084bbacf",
+        "fb8e5030-edab-4d1f-8577-e2accb80cb7c",
+        "b4908601-354f-4b24-8a8d-30b903c77e28",
+        "debfddb0-d98c-4d9b-b73c-5d01a3fbf2a3",
+        "d56a0a8a-0c5b-485c-90df-ed238aff6e43",
+        "457b0890-16dd-4a69-8b75-129786a34118"
+      ]
+    }
+  }
+}

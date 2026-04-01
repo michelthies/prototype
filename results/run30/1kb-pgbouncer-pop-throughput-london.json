@@ -1,0 +1,67 @@
+{
+  "metadata": {
+    "size": "1kb",
+    "pattern": "pgbouncer-pop",
+    "suite": "throughput",
+    "region": "london"
+  },
+  "data": {
+    "test": "throughput",
+    "pattern": "pgbouncer-pop",
+    "region": "london",
+    "workerUrl": "https://pgbouncer-cfworker-pop.ZZZZZZZZZZZZZ.workers.dev",
+    "vus": 20,
+    "duration": "5s",
+    "dropped": 0,
+    "measurement": {
+      "req_per_sec": 125.8,
+      "total_requests": 629,
+      "success_rate": 1,
+      "ttfb_ms": {
+        "p50": 157.061415,
+        "p95": 165.7783576,
+        "p99": 236.47483204000002
+      }
+    },
+    "warmup": {
+      "success_rate": 1,
+      "ttfb_ms": {
+        "min": 148.24566,
+        "p50": 158.65802250000002,
+        "p99": 275.58813266999994,
+        "max": 286.233701,
+        "count": 240
+      }
+    },
+    "connection_metrics": {
+      "peak_connections": 20,
+      "idle_after_run": 20
+    },
+    "colo_distribution": {
+      "LHR": 629
+    },
+    "isolate_tracking": {
+      "isolate_count": 18,
+      "isolate_ids": [
+        "b183030b-903f-442e-a524-8f96ab40ff73",
+        "edb70d60-e768-4f0a-ad38-1c8e11161fe0",
+        "3d3e761f-091f-4104-a639-f3568daab641",
+        "0e03903f-8e36-4ec1-b272-d69bee083acb",
+        "29e1c648-7a26-43c0-a401-35bf19b7183f",
+        "acb8d92d-cdb5-459e-9fa4-f8fc83559be8",
+        "88605b7d-c9a0-41bf-a7ae-f8c4e51c6f4b",
+        "487194dc-3e23-470f-8287-27625da5b1b0",
+        "ff117824-0783-41ba-aecf-8e270485c3b6",
+        "8d64efee-d4a9-45b9-b4d3-d44fb0f7bf68",
+        "03364bce-48a6-4d78-a5b3-4fe755fde43a",
+        "070cc807-4716-4679-aa18-b9e8dd6e76dd",
+        "902f22e7-be3a-42e3-9966-840cdd0d022e",
+        "7aa20188-0576-42a8-892a-ec90d853a965",
+        "f3e767a4-c8eb-441a-acd8-2e6dffaec451",
+        "34f6e122-5699-4b14-b835-d3f157415eb2",
+        "64117879-8eab-4777-b219-445815e7b9ef",
+        "d4bf1e5b-1e2d-4e51-b371-2f150ee5609c"
+      ]
+    }
+  }
+}

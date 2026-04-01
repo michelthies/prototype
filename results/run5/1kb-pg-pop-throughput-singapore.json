@@ -1,0 +1,62 @@
+{
+  "metadata": {
+    "size": "1kb",
+    "pattern": "pg-pop",
+    "suite": "throughput",
+    "region": "singapore"
+  },
+  "data": {
+    "test": "throughput",
+    "pattern": "pg-pop",
+    "region": "singapore",
+    "workerUrl": "https://pg-cfworker-pop.ZZZZZZZZZZZZZ.workers.dev",
+    "vus": 20,
+    "duration": "5s",
+    "dropped": 0,
+    "measurement": {
+      "req_per_sec": 17.4,
+      "total_requests": 87,
+      "success_rate": 1,
+      "ttfb_ms": {
+        "p50": 1237.669674,
+        "p95": 1294.5988588,
+        "p99": 1315.1415569800001
+      }
+    },
+    "warmup": {
+      "success_rate": 1,
+      "ttfb_ms": {
+        "min": 1177.733432,
+        "p50": 1248.6171140000001,
+        "p99": 1353.21793839,
+        "max": 1369.12791,
+        "count": 40
+      }
+    },
+    "connection_metrics": {
+      "peak_connections": 20,
+      "idle_after_run": 0
+    },
+    "colo_distribution": {
+      "SIN": 87
+    },
+    "isolate_tracking": {
+      "isolate_count": 13,
+      "isolate_ids": [
+        "89e24308-a5aa-4f81-ba88-ef0c8c435817",
+        "5d0dde62-ce09-42f7-8635-21e9a3937b80",
+        "df9bd76c-e8f6-4b77-8735-f2763cf3bc40",
+        "95cacc63-a76c-4a26-8c92-dc64456a7c64",
+        "cda4e08e-3f73-4228-837a-f32c9baa0db2",
+        "af105d8f-18c0-49ff-a0a5-8c6432ae0a43",
+        "0f336fd5-037c-441a-aebc-95ad56ab89d7",
+        "6dbcb717-04e9-4833-8d4c-e044025d68e2",
+        "696b8df4-9262-4afa-8bd1-f2ce15465c2d",
+        "18bb4fdf-d619-475a-b76c-c96b5c7dac5f",
+        "58cba5b2-282e-422f-b585-3e5d268640e6",
+        "bda057d3-0123-4319-a491-8d13560250c4",
+        "d401b2dc-a9ca-45df-ab3b-2ccbe9b9e659"
+      ]
+    }
+  }
+}

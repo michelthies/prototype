@@ -1,0 +1,48 @@
+{
+  "metadata": {
+    "size": "1kb",
+    "pattern": "pg-pop",
+    "suite": "latency",
+    "region": "london"
+  },
+  "data": {
+    "test": "latency",
+    "pattern": "pg-pop",
+    "region": "london",
+    "workerUrl": "https://pg-cfworker-pop.ZZZZZZZZZZZZZ.workers.dev",
+    "iterations": 200,
+    "successPct": 100,
+    "dropped": 0,
+    "latencies": {
+      "min": 199.302565,
+      "p50": 207.84056550000003,
+      "p95": 211.9038629,
+      "p99": 221.73511408,
+      "max": 304.110529,
+      "count": 200
+    },
+    "warmup": {
+      "ttfb_ms": {
+        "min": 271.050868,
+        "p50": 271.050868,
+        "p99": 271.050868,
+        "max": 271.050868,
+        "count": 1
+      },
+      "success_rate": 1
+    },
+    "connection_metrics": {
+      "peak_connections": 1,
+      "idle_after_run": 0
+    },
+    "colo_distribution": {
+      "LHR": 200
+    },
+    "isolate_tracking": {
+      "isolate_count": 1,
+      "isolate_ids": [
+        "309a9e7f-30a4-4945-8276-21e5d1deec15"
+      ]
+    }
+  }
+}

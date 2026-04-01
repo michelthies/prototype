@@ -1,0 +1,48 @@
+{
+  "metadata": {
+    "size": "1kb",
+    "pattern": "postgrest-pop",
+    "suite": "latency",
+    "region": "singapore"
+  },
+  "data": {
+    "test": "latency",
+    "pattern": "postgrest-pop",
+    "region": "singapore",
+    "workerUrl": "https://postgrest-cfworker-pop.ZZZZZZZZZZZZZ.workers.dev",
+    "iterations": 200,
+    "successPct": 100,
+    "dropped": 0,
+    "latencies": {
+      "min": 192.305253,
+      "p50": 197.003602,
+      "p95": 200.66718255,
+      "p99": 203.48223551,
+      "max": 1025.239025,
+      "count": 200
+    },
+    "warmup": {
+      "ttfb_ms": {
+        "min": 1010.152509,
+        "p50": 1010.152509,
+        "p99": 1010.152509,
+        "max": 1010.152509,
+        "count": 1
+      },
+      "success_rate": 1
+    },
+    "connection_metrics": {
+      "peak_connections": 2,
+      "idle_after_run": 2
+    },
+    "colo_distribution": {
+      "SIN": 200
+    },
+    "isolate_tracking": {
+      "isolate_count": 1,
+      "isolate_ids": [
+        "41bcd064-256e-4de7-9ede-35197ae8d923"
+      ]
+    }
+  }
+}

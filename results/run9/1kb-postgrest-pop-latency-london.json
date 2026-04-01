@@ -1,0 +1,48 @@
+{
+  "metadata": {
+    "size": "1kb",
+    "pattern": "postgrest-pop",
+    "suite": "latency",
+    "region": "london"
+  },
+  "data": {
+    "test": "latency",
+    "pattern": "postgrest-pop",
+    "region": "london",
+    "workerUrl": "https://postgrest-cfworker-pop.ZZZZZZZZZZZZZ.workers.dev",
+    "iterations": 200,
+    "successPct": 100,
+    "dropped": 0,
+    "latencies": {
+      "min": 38.91525,
+      "p50": 41.3514525,
+      "p95": 44.69387714999999,
+      "p99": 48.66093272,
+      "max": 361.116259,
+      "count": 200
+    },
+    "warmup": {
+      "ttfb_ms": {
+        "min": 330.181837,
+        "p50": 330.181837,
+        "p99": 330.181837,
+        "max": 330.181837,
+        "count": 1
+      },
+      "success_rate": 1
+    },
+    "connection_metrics": {
+      "peak_connections": 2,
+      "idle_after_run": 2
+    },
+    "colo_distribution": {
+      "LHR": 200
+    },
+    "isolate_tracking": {
+      "isolate_count": 1,
+      "isolate_ids": [
+        "b0790fb0-2858-4cd0-9ba4-7e8a9a34763d"
+      ]
+    }
+  }
+}

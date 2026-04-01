@@ -1,0 +1,64 @@
+{
+  "metadata": {
+    "size": "1kb",
+    "pattern": "hyperdrive-pop",
+    "suite": "throughput",
+    "region": "london"
+  },
+  "data": {
+    "test": "throughput",
+    "pattern": "hyperdrive-pop",
+    "region": "london",
+    "workerUrl": "https://hyperdrive-cfworker-pop.ZZZZZZZZZZZZZ.workers.dev",
+    "vus": 20,
+    "duration": "5s",
+    "dropped": 0,
+    "measurement": {
+      "req_per_sec": 524.4,
+      "total_requests": 2622,
+      "success_rate": 1,
+      "ttfb_ms": {
+        "p50": 34.8996425,
+        "p95": 47.478988649999984,
+        "p99": 57.56456909999999
+      }
+    },
+    "warmup": {
+      "success_rate": 1,
+      "ttfb_ms": {
+        "min": 27.070972,
+        "p50": 34.281842999999995,
+        "p99": 196.53730090000002,
+        "max": 232.710781,
+        "count": 954
+      }
+    },
+    "connection_metrics": {
+      "peak_connections": 20,
+      "idle_after_run": 20
+    },
+    "colo_distribution": {
+      "LHR": 2622
+    },
+    "isolate_tracking": {
+      "isolate_count": 15,
+      "isolate_ids": [
+        "116a2135-e269-4e96-8608-9d337b94a262",
+        "9ae36ad2-b760-440a-aaa4-de40d127eb8a",
+        "2f61c2f3-d20a-4e27-9ce2-ff56025e0b3d",
+        "eaffaa83-882a-43fb-80a6-435da921dac9",
+        "6cf6514d-4f80-4c7a-9303-f8f1753b4ba9",
+        "5b080413-c01c-4460-afd8-9fb3bf3a7c08",
+        "e1c2a1f3-c51d-4114-9670-b2a268cfcce7",
+        "0e2a507f-70c6-497e-8a81-542dd7c37617",
+        "1a62da72-f65f-4b6e-b961-f8c364f3a880",
+        "7ae98389-0adf-4ec2-937e-3ffbd851a869",
+        "cf2820d6-433d-4edd-bee0-9e797dd77774",
+        "578af22d-dd2d-4c9b-ba9f-2cc0a449d7ca",
+        "e2e21a95-fdee-4694-81f0-aab89a2f2b40",
+        "36534e18-3764-493d-b6da-e36272f88321",
+        "9184a936-5e12-4d3f-9acb-f1191bbceb75"
+      ]
+    }
+  }
+}

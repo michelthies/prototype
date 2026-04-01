@@ -1,0 +1,58 @@
+{
+  "metadata": {
+    "size": "1kb",
+    "pattern": "postgrest-pop",
+    "suite": "throughput",
+    "region": "singapore"
+  },
+  "data": {
+    "test": "throughput",
+    "pattern": "postgrest-pop",
+    "region": "singapore",
+    "workerUrl": "https://postgrest-cfworker-pop.ZZZZZZZZZZZZZ.workers.dev",
+    "vus": 20,
+    "duration": "5s",
+    "dropped": 0,
+    "measurement": {
+      "req_per_sec": 100.2,
+      "total_requests": 501,
+      "success_rate": 1,
+      "ttfb_ms": {
+        "p50": 178.044128,
+        "p95": 194.07744,
+        "p99": 903.533757
+      }
+    },
+    "warmup": {
+      "success_rate": 1,
+      "ttfb_ms": {
+        "min": 171.297391,
+        "p50": 198.695184,
+        "p99": 2871.3551789400008,
+        "max": 3043.672283,
+        "count": 63
+      }
+    },
+    "connection_metrics": {
+      "peak_connections": 6,
+      "idle_after_run": 6
+    },
+    "colo_distribution": {
+      "SIN": 501
+    },
+    "isolate_tracking": {
+      "isolate_count": 9,
+      "isolate_ids": [
+        "a28ef6d3-a401-423e-8989-0eefe34e182c",
+        "7670175e-f372-49a1-abc2-a0d9820eb05a",
+        "f5336391-7657-4caf-bb9a-058d5abb6168",
+        "fa49d7d3-5e4f-455b-b134-c5e0e92236e4",
+        "a280b3d8-f2d1-4ef7-8838-513c4fb45b74",
+        "6690847c-58ce-4dbd-ab92-4ec7b976bf3d",
+        "d85b5c87-e194-44c6-be42-b36203ab3d87",
+        "5ecf3fa8-05ea-42b7-bcb4-8d06a4e7fe6d",
+        "c9f2653e-31a1-49b5-91f2-2b0297c22f12"
+      ]
+    }
+  }
+}

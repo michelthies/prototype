@@ -1,0 +1,112 @@
+{
+  "metadata": {
+    "size": "10kb",
+    "pattern": "postgrest",
+    "suite": "latency",
+    "region": "london"
+  },
+  "data": {
+    "test": "latency",
+    "pattern": "postgrest",
+    "region": "london",
+    "workerUrl": "https://postgrest-cfworker.ZZZZZZZZZZZZZ.workers.dev",
+    "iterations": 200,
+    "successPct": 100,
+    "dropped": 0,
+    "latencies": {
+      "min": 31.79434,
+      "p50": 39.8201335,
+      "p95": 174.86555284999991,
+      "p99": 199.4192888499999,
+      "max": 248.429869,
+      "count": 200
+    },
+    "warmup": {
+      "ttfb_ms": {
+        "min": 184.572466,
+        "p50": 184.572466,
+        "p99": 184.572466,
+        "max": 184.572466,
+        "count": 1
+      },
+      "success_rate": 1
+    },
+    "connection_metrics": {
+      "peak_connections": 2,
+      "idle_after_run": 2
+    },
+    "colo_distribution": {
+      "LHR": 200
+    },
+    "placement_colo_distribution": {
+      "FRA": 200
+    },
+    "isolate_tracking": {
+      "isolate_count": 62,
+      "isolate_ids": [
+        "49cde558-f4d0-42bf-9057-e0b776d66343",
+        "22377fca-abeb-4456-b6b7-d1a231359768",
+        "03ea0a92-7155-49e4-bbf9-c360c704f374",
+        "d2a95e1b-87b5-4dc5-938b-7557448ef7ef",
+        "b4ec857f-754a-4695-8093-6e5ce26c2017",
+        "388da18a-b38d-4932-810d-ecd8739f410c",
+        "7782d24d-a908-4d50-9088-9fc4bf4dd36e",
+        "da4b7fa1-8c81-4ef2-a758-a21791cec62c",
+        "0742ee5b-1c87-4763-a756-adc0bf71f2ec",
+        "b5a1c359-cfa0-4bea-9506-a6983b5c2855",
+        "6668dd3b-c7a8-4a65-96b6-a9516bfdd21a",
+        "e2f99111-1310-4a9d-9bf3-4390c37f868e",
+        "9432f2de-7bca-4800-aac6-0b7b1138902f",
+        "f6ca6281-4e2e-4b39-9ed4-0b0d5779e9c5",
+        "2b57a223-e0ee-4cbe-a74b-90216fe97c64",
+        "ea31e1fe-5355-4571-8f5a-4e12cf0fbe5d",
+        "212e4394-0452-4b9e-8a11-d09d9751d932",
+        "a048ae83-2648-4fe4-a1e1-baf40ad168cb",
+        "1ea9288e-f0e2-4006-a729-1a581c3fa6da",
+        "95114572-e1a4-4035-bf85-d07c211526cc",
+        "a18b154c-27df-417c-8a19-d7a8e6195d05",
+        "5e22ab9e-2a66-4f0b-a708-39691e218466",
+        "1c0a1a05-6b98-4e1e-8a72-5b3e51f7fdd7",
+        "6fece2a6-6e22-4b48-be5e-3a97f18d28f2",
+        "0f824e49-477d-4fae-a5f6-c2daa23c5021",
+        "397ad6db-4493-4f29-8a2d-de9007f1d9b5",
+        "4361fdbb-b0cc-4ec3-83db-ebfd04b71653",
+        "54dc6628-7410-4c29-84fa-5f212ef6cddc",
+        "0770b16e-4e8a-4740-829a-b2389a898aeb",
+        "8b26f38b-c850-4bb8-8457-354d697d6ca4",
+        "a55a6103-3926-43a2-a4d9-e08496b32bad",
+        "31c63a0e-6c50-41e0-b2f9-3c0bfd3dfbc9",
+        "4dd89e94-e0b1-4a23-aca4-3edaa0e40be3",
+        "162bd0d6-0527-422b-b2cc-db8539c51440",
+        "adb6139e-7071-430a-88ba-19bbabdc8861",
+        "b0100de6-5f2e-46e1-8181-4aed62817895",
+        "b3693988-4e0a-4b78-aa08-54503e17c617",
+        "a456229c-8552-48fc-b7f2-31fe254a978b",
+        "361022cf-fa93-4d82-ab3b-2eef3f2b3f5c",
+        "1fd83a41-7e74-49e2-928b-90c9c8e44e60",
+        "37b43d3b-5f4c-4032-9288-c53da66416d2",
+        "8fbac433-a819-4f13-96e3-9094be900bb7",
+        "87062943-1f73-434e-a457-10da8e5f4175",
+        "f562cceb-ad4d-418d-b532-a69fb1f45c62",
+        "2274541b-d831-47a7-90b6-ced497fc753f",
+        "013f8768-dd23-4dc9-a35e-d4a95e12920e",
+        "06e73792-a521-41c2-b48c-096d6b440be7",
+        "5d22c025-be60-4f8b-9a19-f25c54f50c89",
+        "60173ad4-4533-435c-861b-ba498dd10b2a",
+        "a6c6f4a1-60ae-462a-8b26-abb149443bae",
+        "9395e862-23af-42f3-8cf2-994b0d00561a",
+        "34f4a29a-4500-4b44-b53c-c97c57cb4039",
+        "801df121-0b67-4301-8076-442e1ad2ca93",
+        "2b5b9ffa-1b5b-4362-8c52-fd1b17e015d2",
+        "e918c7b7-a1df-408f-bc9e-7af22a605362",
+        "1de5040a-1746-4fd5-9e63-a52fc4aaf56e",
+        "e762e4e8-be1a-41f6-93e7-94ffc6f44ab8",
+        "d4e41531-d6be-4335-b79b-e9f2a4fcccce",
+        "2d52119d-20df-4f94-ba32-dced4c9f59c0",
+        "7082a506-705e-48bf-90f1-9dfbc85726bc",
+        "a14a7152-4109-4e17-9f13-00c0d0fb8ba8",
+        "7dfc79c4-3f6c-407e-9cc2-cd18174cc3d2"
+      ]
+    }
+  }
+}

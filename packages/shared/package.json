@@ -1,0 +1,21 @@
+{
+  "name": "@repo/shared",
+  "type": "module",
+  "exports": {
+    "./api": "./src/api/index.ts",
+    "./core": "./src/core/index.ts",
+    "./db": "./src/db/index.ts",
+    "./frontend": "./src/frontend/index.ts"
+  },
+  "dependencies": {
+    "@hono/zod-validator": "^0.7.6",
+    "bcryptjs": "catalog:",
+    "hono": "catalog:",
+    "pg": "catalog:",
+    "zod": "catalog:"
+  },
+  "devDependencies": {
+    "@types/bcryptjs": "catalog:",
+    "@types/pg": "catalog:"
+  }
+}

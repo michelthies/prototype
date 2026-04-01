@@ -1,0 +1,23 @@
+{
+  "name": "postgrest-cfworker",
+  "main": "src/index.ts",
+  "compatibility_date": "2026-02-14",
+  "compatibility_flags": [
+    "nodejs_compat"
+  ],
+  "vars": {
+    "DB_CLIENT": "postgrest",
+    "NODE_ENV": "production",
+    "JWT_SECRET": "YYYYYYYYYYYYYYYYYYYYYYY",
+    "POSTGREST_URL": "https://static.WWWWWWclients.your-server.de"
+  },
+  "placement": {
+    "host": "TTTTTTTTTT:5432"
+  },
+  "observability": {
+    "logs": {
+      "enabled": true,
+      "invocation_logs": true
+    }
+  }
+}

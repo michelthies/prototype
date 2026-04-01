@@ -1,0 +1,7 @@
+{$VPS_DOMAIN}:443 {
+reverse_proxy postgrest:3000
+}
+
+{$VPS_DOMAIN}:3001 {
+reverse_proxy node:3000
+}

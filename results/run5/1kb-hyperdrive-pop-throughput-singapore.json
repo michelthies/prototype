@@ -1,0 +1,70 @@
+{
+  "metadata": {
+    "size": "1kb",
+    "pattern": "hyperdrive-pop",
+    "suite": "throughput",
+    "region": "singapore"
+  },
+  "data": {
+    "test": "throughput",
+    "pattern": "hyperdrive-pop",
+    "region": "singapore",
+    "workerUrl": "https://hyperdrive-cfworker-pop.ZZZZZZZZZZZZZ.workers.dev",
+    "vus": 20,
+    "duration": "5s",
+    "dropped": 0,
+    "measurement": {
+      "req_per_sec": 100.6,
+      "total_requests": 503,
+      "success_rate": 1,
+      "ttfb_ms": {
+        "p50": 178.48959,
+        "p95": 305.9566874,
+        "p99": 354.79016348000005
+      }
+    },
+    "warmup": {
+      "success_rate": 1,
+      "ttfb_ms": {
+        "min": 169.454038,
+        "p50": 199.9841465,
+        "p99": 528.4913668400001,
+        "max": 541.668385,
+        "count": 180
+      }
+    },
+    "connection_metrics": {
+      "peak_connections": 18,
+      "idle_after_run": 18
+    },
+    "colo_distribution": {
+      "SIN": 503
+    },
+    "isolate_tracking": {
+      "isolate_count": 21,
+      "isolate_ids": [
+        "c192d16d-2fe4-4ce8-894f-1efeddb8a3d4",
+        "f817987f-89f7-4366-aaef-cdc1b5f5dd55",
+        "78b3c7ce-1f41-47b4-8606-4258e9c6cca5",
+        "d06c5302-b2c1-4824-b981-da4b27ad1aa0",
+        "9799c256-560f-4433-9057-2a59b0dc0785",
+        "fc12e53b-38dd-4084-8580-e00eb7f77b9e",
+        "3ed0cd0c-1c9a-4879-b673-e840ad678513",
+        "cdc7cdf0-1940-4175-9eab-64011b2a7d0f",
+        "db951246-9d99-40d4-bfde-951095c611a7",
+        "51a834b6-5fc2-4969-b5f6-ac142edd646e",
+        "f91aa907-ca20-4c19-a4ef-97c674789bcf",
+        "b126d4ed-1422-4deb-ac0a-e31e2d3cb7e8",
+        "4459538b-f00b-484c-9c74-fb1b4a4c568b",
+        "c78d0818-0b12-4ad8-8fd8-05a6b826cef4",
+        "17953665-e2c6-4738-88b7-8c1d117abd22",
+        "38e7f275-845c-4cd9-b3c9-e0152bf0053f",
+        "d19ecdc9-2133-47d6-b998-340371d43afd",
+        "c546e1ee-bbf2-4f25-ba00-6f66820eddff",
+        "1d4789a8-665b-40d2-8dec-cbedf8d4d24e",
+        "0e03e344-7cbe-4c90-b572-0c4408c5896a",
+        "9bfa0e45-345e-43b3-8603-a86142c1011b"
+      ]
+    }
+  }
+}

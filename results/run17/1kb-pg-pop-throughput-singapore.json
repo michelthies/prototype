@@ -1,0 +1,70 @@
+{
+  "metadata": {
+    "size": "1kb",
+    "pattern": "pg-pop",
+    "suite": "throughput",
+    "region": "singapore"
+  },
+  "data": {
+    "test": "throughput",
+    "pattern": "pg-pop",
+    "region": "singapore",
+    "workerUrl": "https://pg-cfworker-pop.ZZZZZZZZZZZZZ.workers.dev",
+    "vus": 20,
+    "duration": "5s",
+    "dropped": 0,
+    "measurement": {
+      "req_per_sec": 18.4,
+      "total_requests": 92,
+      "success_rate": 1,
+      "ttfb_ms": {
+        "p50": 1207.727424,
+        "p95": 1339.0203101500001,
+        "p99": 1377.6257294000002
+      }
+    },
+    "warmup": {
+      "success_rate": 1,
+      "ttfb_ms": {
+        "min": 1184.947089,
+        "p50": 1246.84532,
+        "p99": 1404.152883,
+        "max": 1404.346089,
+        "count": 40
+      }
+    },
+    "connection_metrics": {
+      "peak_connections": 20,
+      "idle_after_run": 0
+    },
+    "colo_distribution": {
+      "SIN": 92
+    },
+    "isolate_tracking": {
+      "isolate_count": 21,
+      "isolate_ids": [
+        "62cb354e-1eb1-490e-b1ea-20a05878cdbc",
+        "07f1a17d-a35c-421a-81e9-3c98b26b8252",
+        "f636f88b-70fc-4537-8bd9-3500fdf42198",
+        "f8f54a27-2521-4a12-9b9c-5f79e2cf50d7",
+        "32bbf7be-0688-4011-b334-e8c4732eb461",
+        "253b609b-4d86-4dab-91a5-3c4e9ce8f23c",
+        "07697151-f3ad-444e-bb7e-a13908d13de4",
+        "dcce6073-e179-46b3-ad06-9a9022b6581f",
+        "5667d4f4-b980-4bfb-89ff-6223862e2974",
+        "963ed51e-c002-40cc-80ef-1a54039b9af9",
+        "542016eb-099f-4559-8294-6537347de7a5",
+        "ec7ae397-ab8d-4331-8419-21e81fd86ed0",
+        "86a383a4-02e1-44bf-9fc5-3d765e01d3f6",
+        "874035fc-8446-4d82-91e8-1d187d2f5946",
+        "7174340f-47f3-4101-9b3a-83ec20a78dad",
+        "9c3db631-92d7-4bc5-a4ed-7f2e29af8f03",
+        "7b424d52-715b-439f-b9e5-66c462ce43dd",
+        "3ab1fc4f-056d-426d-92a4-d0a1e8c660c7",
+        "5d384573-c6bd-4eb9-90a8-45b51cd176f5",
+        "c3f0c792-e3e7-49fd-815d-9540aa349ac4",
+        "1b4ab8ff-f3ce-4303-899b-1799dff58956"
+      ]
+    }
+  }
+}

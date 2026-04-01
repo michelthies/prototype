@@ -1,0 +1,48 @@
+{
+  "metadata": {
+    "size": "1kb",
+    "pattern": "pgbouncer-pop",
+    "suite": "latency",
+    "region": "singapore"
+  },
+  "data": {
+    "test": "latency",
+    "pattern": "pgbouncer-pop",
+    "region": "singapore",
+    "workerUrl": "https://pgbouncer-cfworker-pop.ZZZZZZZZZZZZZ.workers.dev",
+    "iterations": 200,
+    "successPct": 100,
+    "dropped": 0,
+    "latencies": {
+      "min": 1000.715113,
+      "p50": 1044.679858,
+      "p95": 1082.3666352999999,
+      "p99": 1084.86374893,
+      "max": 1238.43826,
+      "count": 200
+    },
+    "warmup": {
+      "ttfb_ms": {
+        "min": 1142.445444,
+        "p50": 1142.445444,
+        "p99": 1142.445444,
+        "max": 1142.445444,
+        "count": 1
+      },
+      "success_rate": 1
+    },
+    "connection_metrics": {
+      "peak_connections": 1,
+      "idle_after_run": 1
+    },
+    "colo_distribution": {
+      "SIN": 200
+    },
+    "isolate_tracking": {
+      "isolate_count": 1,
+      "isolate_ids": [
+        "6e83df80-b98b-45ce-abfe-54182f1b0921"
+      ]
+    }
+  }
+}

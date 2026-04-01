@@ -1,0 +1,58 @@
+{
+  "metadata": {
+    "size": "1kb",
+    "pattern": "postgrest-pop",
+    "suite": "throughput",
+    "region": "london"
+  },
+  "data": {
+    "test": "throughput",
+    "pattern": "postgrest-pop",
+    "region": "london",
+    "workerUrl": "https://postgrest-cfworker-pop.ZZZZZZZZZZZZZ.workers.dev",
+    "vus": 20,
+    "duration": "5s",
+    "dropped": 0,
+    "measurement": {
+      "req_per_sec": 545.2,
+      "total_requests": 2726,
+      "success_rate": 1,
+      "ttfb_ms": {
+        "p50": 33.680796,
+        "p95": 39.415408,
+        "p99": 43.8207355
+      }
+    },
+    "warmup": {
+      "success_rate": 1,
+      "ttfb_ms": {
+        "min": 28.128852,
+        "p50": 33.2336455,
+        "p99": 384.38693417000013,
+        "max": 424.217514,
+        "count": 918
+      }
+    },
+    "connection_metrics": {
+      "peak_connections": 15,
+      "idle_after_run": 15
+    },
+    "colo_distribution": {
+      "LHR": 2726
+    },
+    "isolate_tracking": {
+      "isolate_count": 9,
+      "isolate_ids": [
+        "65f6e453-b69f-4f21-bd03-0fccddffe7c0",
+        "80ae4c5f-7e1c-4ce0-a857-872cacce0c09",
+        "1f4b3576-3ce4-47b8-8316-6f5eeb2d3cf3",
+        "038f7e51-2d27-49d2-ae25-c85e182c6e00",
+        "26976386-72e8-44ff-ba8d-ed118879cfcd",
+        "0fc3a881-6c86-49d7-8579-5896f6ff8fd9",
+        "e5c28ffc-1fb0-42e3-a467-166a6ad09c6a",
+        "1bee1412-f54e-4ff5-aa86-6ac8bd7ac3ca",
+        "2f8afefd-116a-4cd4-8744-7c4af473ac7b"
+      ]
+    }
+  }
+}

@@ -1,0 +1,112 @@
+{
+  "metadata": {
+    "size": "10kb",
+    "pattern": "pgbouncer",
+    "suite": "latency",
+    "region": "new-york"
+  },
+  "data": {
+    "test": "latency",
+    "pattern": "pgbouncer",
+    "region": "new-york",
+    "workerUrl": "https://pgbouncer-cfworker.ZZZZZZZZZZZZZ.workers.dev",
+    "iterations": 200,
+    "successPct": 100,
+    "dropped": 0,
+    "latencies": {
+      "min": 123.454253,
+      "p50": 142.326062,
+      "p95": 250.76273009999994,
+      "p99": 264.61975288,
+      "max": 330.283494,
+      "count": 200
+    },
+    "warmup": {
+      "ttfb_ms": {
+        "min": 290.93277,
+        "p50": 290.93277,
+        "p99": 290.93277,
+        "max": 290.93277,
+        "count": 1
+      },
+      "success_rate": 1
+    },
+    "connection_metrics": {
+      "peak_connections": 1,
+      "idle_after_run": 1
+    },
+    "colo_distribution": {
+      "EWR": 200
+    },
+    "placement_colo_distribution": {
+      "FRA": 200
+    },
+    "isolate_tracking": {
+      "isolate_count": 62,
+      "isolate_ids": [
+        "e3e18bd7-2459-4d85-bea0-ec4282b6b7e8",
+        "6baf007f-68a9-46ca-8b58-003768aeb951",
+        "d0bd99df-a546-440f-80d7-c41fd0a7dacc",
+        "0a7aaf93-c642-4f90-a8e3-7da25338412b",
+        "87d18082-f488-4ed6-a03f-1ca1a7bfc979",
+        "bbd160a3-7467-407c-a206-bada2b6d223c",
+        "c1d5a911-4dc5-410f-8c97-555b0a67e69f",
+        "ccc9e9bd-0b05-4d16-88c8-e8fcd14b61de",
+        "e9932f1d-16cc-4eda-9eeb-c744c6075221",
+        "ff6c5d16-6e76-4249-a83d-4c488bd1ca99",
+        "cc9d314c-bcec-4806-8bf7-13cc20ac6313",
+        "8a4908e1-e099-480b-8848-53d7f37ce5cf",
+        "a5ce75f2-be77-4d78-94fe-949e79c4c3a9",
+        "d4d12d28-c11a-4ba7-908c-d2a2e8109ea3",
+        "9d18bcff-ce39-41f4-9608-64d990431058",
+        "9a8b01b4-85aa-4743-a2ad-df00c963df47",
+        "d9dec2aa-cf76-4da6-91c7-85ea2e68fc3c",
+        "b80d7de6-8a1f-4d5c-b412-ce350966a1bc",
+        "7c71e99f-8791-4939-b184-1da5e8adba9f",
+        "0b997b2d-bf41-4601-b3b8-9d8eb4ae5ff1",
+        "bfe3b0b3-6792-4b86-a371-94e2cf6f7214",
+        "cb98ab5a-d748-45ea-bec9-1e9bd0e68751",
+        "bd4fd150-3e85-457e-8134-e20fb7503a51",
+        "0cd1d9de-4a7a-4118-9673-ce94dfd023ad",
+        "52e48c60-4521-4fa1-af8c-ed766eb5e11a",
+        "97a92e1b-845f-4698-83d2-460efee05945",
+        "0b879142-fd21-4720-9c3c-ec423911d7b1",
+        "aa8583bd-c075-4113-a5f8-b0f8f0d15c34",
+        "c1dbe955-a127-4690-bfc7-421e1ffd75fe",
+        "4e60fb3f-57aa-4e0e-82fa-acf1b4151cc7",
+        "9a15a4c1-da02-495b-bb1e-73910f2241f3",
+        "cf5f904e-62f5-4947-9e9b-13a6547653f5",
+        "f6e1904f-bf2b-4a5a-adba-21dbde034b2a",
+        "c7069437-6a37-4cdd-b079-e1071204dc86",
+        "b1ad2739-2417-49fd-9ae4-4b2ee2a4d68d",
+        "ccaf9c6a-1970-4ddf-83f9-45fd0b985b44",
+        "77e532d5-566b-409e-b1cd-65554aa1b047",
+        "a6d002af-f13d-4541-94ff-1ebba0b85e2b",
+        "d7674f25-fbb1-473b-adc1-e61a4ff49758",
+        "ce0d9d1a-39aa-4103-9473-6e4fbb6280bb",
+        "ec06329c-f04c-47b5-8cdc-17186b4dd886",
+        "a42f0bad-9529-4d18-a98d-f4536fc29ecf",
+        "bb6b599a-ff71-4e2c-b07f-acd34a7b1262",
+        "6c779e38-c492-40bf-b373-4ed0931cc20c",
+        "d7307e6f-6bda-461e-a415-ecfdd3c8de7c",
+        "94b53a1a-d86b-48b4-96cf-9817771318b4",
+        "084b2327-199d-423f-9112-5e80a56537d2",
+        "a04f6f56-c6f9-4219-85d0-aa27a14f26fc",
+        "1c77e776-4748-4450-b622-a68a97f2bd1c",
+        "5461037e-25f2-47a4-bf03-2c317b9eb7c7",
+        "21413f1f-96b1-48fa-91e8-a00826a5c628",
+        "47a0cf49-7cba-4823-a3b5-c9c9cdae5803",
+        "2f63786b-ea1d-4b3a-a853-962d931b611d",
+        "307f9021-e886-4452-b70c-ddf35754c328",
+        "79556dfa-a6d9-4190-acaa-6791bfd9a0bd",
+        "5687d16e-5317-4ac5-897c-05a51ef3cee7",
+        "3ed51e44-cf19-48d8-aabb-8e9720e53a75",
+        "710eacbb-3558-4ea1-9325-c703d2ad460a",
+        "701ae8ad-8f5a-458e-ac91-620b2a1b9ce4",
+        "33f8526d-33e8-4c2f-8f99-d545a818a468",
+        "b85e5bb7-17a9-497e-a534-82498f5fdaf7",
+        "cce19fc0-8485-4bb0-8d25-b57e577bd34f"
+      ]
+    }
+  }
+}

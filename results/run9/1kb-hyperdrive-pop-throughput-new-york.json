@@ -1,0 +1,75 @@
+{
+  "metadata": {
+    "size": "1kb",
+    "pattern": "hyperdrive-pop",
+    "suite": "throughput",
+    "region": "new-york"
+  },
+  "data": {
+    "test": "throughput",
+    "pattern": "hyperdrive-pop",
+    "region": "new-york",
+    "workerUrl": "https://hyperdrive-cfworker-pop.ZZZZZZZZZZZZZ.workers.dev",
+    "vus": 20,
+    "duration": "5s",
+    "dropped": 0,
+    "measurement": {
+      "req_per_sec": 182,
+      "total_requests": 910,
+      "success_rate": 1,
+      "ttfb_ms": {
+        "p50": 103.76353850000001,
+        "p95": 122.28148449999995,
+        "p99": 194.64627299999995
+      }
+    },
+    "warmup": {
+      "success_rate": 1,
+      "ttfb_ms": {
+        "min": 96.201936,
+        "p50": 117.960384,
+        "p99": 354.53295388,
+        "max": 414.530717,
+        "count": 269
+      }
+    },
+    "connection_metrics": {
+      "peak_connections": 19,
+      "idle_after_run": 19
+    },
+    "colo_distribution": {
+      "EWR": 910
+    },
+    "isolate_tracking": {
+      "isolate_count": 26,
+      "isolate_ids": [
+        "4622d96f-74a8-4545-9454-3f47f257f07d",
+        "912349a3-b474-42fa-a06e-8d665b64fccb",
+        "8868cc59-2814-4535-943b-87601eef01f8",
+        "99ce509c-231f-4e05-9b05-4450ace2000e",
+        "fdb9747c-c0df-449a-8eac-5eeec8710f93",
+        "d48d2a81-82c6-410d-8741-b678cb824002",
+        "70cbf413-a474-4f5a-a240-6d026c5a2f2c",
+        "64144db1-112e-4c5f-b627-dea35943a414",
+        "f0574ddd-6e38-442e-8064-25afc16f79bb",
+        "6bdd0388-4350-4290-8fb7-7634bb2ef3a2",
+        "156ea5cd-6da1-46ed-b0c5-efc3eb588667",
+        "64c079a0-c0da-4888-aed9-7b6845f57ff1",
+        "6775c4b2-7718-4d3f-846c-a936a7414320",
+        "5ac93c96-55e3-4bcd-8235-1d7b5f31d701",
+        "a9060e6f-c3f7-4ba9-9b67-0406a0e2f8fc",
+        "e87229d8-2a7b-4e27-a542-5d3999f72abd",
+        "c1274ab4-d8ad-4435-b54d-c48ce7384806",
+        "837126fc-0b0b-4d90-ac56-aeef8cbd6c66",
+        "99d849a6-55f8-4b3e-8e05-dd0e71be30fc",
+        "76005caf-3d81-4a65-8aff-249fd37251ef",
+        "2f36f52e-f9c8-4932-be23-79f2b98ccc29",
+        "ff4792db-d964-4283-aaf6-eadc43d83949",
+        "5bc0d560-75b6-44b3-bc71-9782b82dd323",
+        "5c2f3923-0902-43eb-baeb-f1d33980f540",
+        "7586b102-c8e5-4f99-8a78-cab2db5d2edd",
+        "e566b0b5-fd41-426a-9baa-576ae02a33cf"
+      ]
+    }
+  }
+}

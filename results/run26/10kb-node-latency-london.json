@@ -1,0 +1,48 @@
+{
+  "metadata": {
+    "size": "10kb",
+    "pattern": "node",
+    "suite": "latency",
+    "region": "london"
+  },
+  "data": {
+    "test": "latency",
+    "pattern": "node",
+    "region": "london",
+    "workerUrl": "https://static.WWWWWWclients.your-server.de:3001",
+    "iterations": 200,
+    "successPct": 100,
+    "dropped": 0,
+    "latencies": {
+      "min": 19.719439,
+      "p50": 22.589983,
+      "p95": 24.079705899999997,
+      "p99": 26.97799454999998,
+      "max": 38.361075,
+      "count": 200
+    },
+    "warmup": {
+      "ttfb_ms": {
+        "min": 103.929081,
+        "p50": 103.929081,
+        "p99": 103.929081,
+        "max": 103.929081,
+        "count": 1
+      },
+      "success_rate": 1
+    },
+    "connection_metrics": {
+      "peak_connections": 1,
+      "idle_after_run": 1
+    },
+    "colo_distribution": {
+      "NODE": 200
+    },
+    "isolate_tracking": {
+      "isolate_count": 1,
+      "isolate_ids": [
+        "0f38a077-4b13-4950-b698-425efa410c98"
+      ]
+    }
+  }
+}

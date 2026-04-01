@@ -1,0 +1,114 @@
+{
+  "metadata": {
+    "size": "10kb",
+    "pattern": "pg",
+    "suite": "latency",
+    "region": "singapore"
+  },
+  "data": {
+    "test": "latency",
+    "pattern": "pg",
+    "region": "singapore",
+    "workerUrl": "https://pg-cfworker.ZZZZZZZZZZZZZ.workers.dev",
+    "iterations": 200,
+    "successPct": 100,
+    "dropped": 0,
+    "latencies": {
+      "min": 218.031712,
+      "p50": 236.689682,
+      "p95": 366.6725001,
+      "p99": 388.83362228999994,
+      "max": 411.535929,
+      "count": 200
+    },
+    "warmup": {
+      "ttfb_ms": {
+        "min": 442.457759,
+        "p50": 442.457759,
+        "p99": 442.457759,
+        "max": 442.457759,
+        "count": 1
+      },
+      "success_rate": 1
+    },
+    "connection_metrics": {
+      "peak_connections": 1,
+      "idle_after_run": 0
+    },
+    "colo_distribution": {
+      "SIN": 200
+    },
+    "placement_colo_distribution": {
+      "FRA": 200
+    },
+    "isolate_tracking": {
+      "isolate_count": 64,
+      "isolate_ids": [
+        "7d5b6bdd-d9cd-484d-a456-3985c07b2493",
+        "96739bbf-02ad-441e-ae02-3b0cb113c4fe",
+        "ef918783-948e-4055-bf99-e0380dcbbda2",
+        "90c7aa65-3c6e-45c7-bb95-1965eb9be5cc",
+        "7188ab2f-e8c8-4fc9-b2eb-b6308af12a3c",
+        "b7547bcd-1253-46c8-bc4d-8f55bdae2350",
+        "03b11dfd-27b4-455c-955b-0110d9f8da95",
+        "9a4c969f-0abf-46f7-99b3-68345adfc2c9",
+        "36b9afd5-ab2d-4716-90df-692e78aa9383",
+        "1eb1727e-9f14-43c7-b3d6-6306befc953a",
+        "92003e5c-4727-47e0-a4ba-352dfa64b6f5",
+        "a223f248-c45f-4d5d-a24a-a0ffbd1deed0",
+        "1b51ad66-5cab-4f9d-b084-fde9ab998934",
+        "56a0b4b3-6450-4397-bb61-54097064632a",
+        "c585a288-debc-4cfa-9994-19a5e88ab695",
+        "1d349855-65ed-4239-b030-f8895194f754",
+        "afccedff-0eb8-4a5d-9099-afe29976724e",
+        "a4fb0fe1-3f91-4ca4-9e01-d450a54d1c34",
+        "a69fddf3-67bb-4d05-ab0c-506a2ea0669f",
+        "46d2d72a-196c-4dee-a424-fbe33cc3dbc9",
+        "d3cd58f8-8ee8-4af4-94b6-d92404e9e2f5",
+        "96f078b3-eb4c-457a-805f-bac5ea5ee278",
+        "95ac8ca1-d2c0-46d0-9269-73bf431996d8",
+        "bf9580fe-243a-4b42-88f7-1d1d55d4b9ce",
+        "2fc595dc-827f-4b4d-bf89-b971ed58a84e",
+        "2e22a352-b4d6-4f4b-99d0-72b6501a045d",
+        "13aab93f-7223-4e3f-aa51-25132cca6d14",
+        "09526d23-54d4-4f6c-9c8d-dc6af8c01487",
+        "10634711-5ad2-4392-b6e3-4162ab57b30f",
+        "2ecb141e-8561-40e3-ae31-ff236a4d5f35",
+        "cffd05a1-7d40-4ec0-8e19-2e38986351b0",
+        "3c3ff4fe-13e3-40f9-a8a1-f533cdecb3b8",
+        "7ef2804b-82d8-4b78-83a7-0bf175b57b39",
+        "cd18ad29-35da-4708-a0bf-136ed6b26cb8",
+        "9f2eae15-97b2-4b88-9469-3f3e5c9f3cde",
+        "a4219c02-6898-46ac-b4f3-b84b77189bb3",
+        "3b7a2ec7-44ce-4bcd-9f59-82a87d21c5d0",
+        "6bf87852-7e84-4d9c-b07f-a21cb245f09c",
+        "987c90ab-d860-476c-b1b8-e06d32eb295f",
+        "7eacfd5a-70ed-4bdc-939a-90491c2c73c1",
+        "f99c0ea2-c6a7-4152-a4ce-c6d040953bf6",
+        "b9b27872-8fa6-42b1-b163-2cafbc461d4d",
+        "481fe80d-1383-4ed9-a965-5961f9712033",
+        "8ed6f95d-a52c-4858-83f2-4b7259484855",
+        "5672ee36-e90c-4cad-bb49-d43de1a86b6b",
+        "f973ad29-9a2b-4f2e-9e87-870adbd3b137",
+        "f344e60c-3f81-4b2e-a6ee-2864fc356825",
+        "ee8d7ba7-3e8b-45a0-beca-08a87ff40c6e",
+        "d279004e-f0a4-462c-855a-b576c6f7a58d",
+        "1cbf6e18-7fed-4e87-b2d3-3f0814f315d9",
+        "23ef8c44-e94a-4f4d-9373-c77900c28b8b",
+        "667d6718-09ca-428a-be2c-509574a53074",
+        "3217f6b1-4d25-404c-ab4b-15d6732df85b",
+        "98575de0-9572-44d2-a1ad-9540d56f03c1",
+        "376484c8-efd4-40c5-8c92-589e97d7b2ef",
+        "ea99a3c9-9709-47a8-af55-b8b1e45fe1f6",
+        "eb9bd3ef-0c4b-48b9-bc76-2fba2d974e5c",
+        "78754935-897b-4a20-8439-b1950b4a6ffa",
+        "0d6c3f3c-6707-49f3-a010-0ca7ab288d51",
+        "dd2b26c9-4e3e-406b-8f04-3c89519aa9be",
+        "d6de9ff4-1093-4ffd-b388-2397f3da7e83",
+        "2418a0e5-5bba-4642-890a-2c0221a7fff6",
+        "15d119d4-bc4a-4088-b295-00f554123cec",
+        "ded90429-92b7-41cf-bd8d-0ed96c21d177"
+      ]
+    }
+  }
+}

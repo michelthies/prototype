@@ -1,0 +1,39 @@
+{
+  "name": "worker",
+  "type": "module",
+  "scripts": {
+    "dev": "wrangler dev",
+    "dev:pg": "wrangler dev -c wrangler.pg.json --env-file .dev.vars.pg",
+    "dev:pgbouncer": "wrangler dev -c wrangler.pgbouncer.json --env-file .dev.vars.pgbouncer",
+    "dev:postgrest": "wrangler dev -c wrangler.postgrest.json --env-file .dev.vars.postgrest",
+    "dev:hyperdrive": "wrangler dev -c wrangler.hyperdrive.json --env-file .dev.vars.hyperdrive",
+    "deploy": "wrangler deploy --minify",
+    "deploy:pg": "wrangler deploy --minify -c wrangler.pg.json",
+    "deploy:pg-pool": "wrangler deploy --minify -c wrangler.pg-pool.json",
+    "deploy:pgbouncer": "wrangler deploy --minify -c wrangler.pgbouncer.json",
+    "deploy:postgrest": "wrangler deploy --minify -c wrangler.postgrest.json",
+    "deploy:hyperdrive": "wrangler deploy --minify -c wrangler.hyperdrive.json",
+    "deploy:pg-pop": "wrangler deploy --minify -c wrangler.pg-pop.json",
+    "deploy:pg-pool-pop": "wrangler deploy --minify -c wrangler.pg-pool-pop.json",
+    "deploy:pgbouncer-pop": "wrangler deploy --minify -c wrangler.pgbouncer-pop.json",
+    "deploy:postgrest-pop": "wrangler deploy --minify -c wrangler.postgrest-pop.json",
+    "deploy:hyperdrive-pop": "wrangler deploy --minify -c wrangler.hyperdrive-pop.json",
+    "deploy:all": "wrangler deploy --minify -c wrangler.pg.json && wrangler deploy --minify -c wrangler.pgbouncer.json && wrangler deploy --minify -c wrangler.postgrest.json && wrangler deploy --minify -c wrangler.hyperdrive.json && wrangler deploy --minify -c wrangler.pg-pool.json && wrangler deploy --minify -c wrangler.pg-pop.json && wrangler deploy --minify -c wrangler.pgbouncer-pop.json && wrangler deploy --minify -c wrangler.postgrest-pop.json && wrangler deploy --minify -c wrangler.hyperdrive-pop.json && wrangler deploy --minify -c wrangler.pg-pool-pop.json",
+    "delete:pg": "wrangler delete -c wrangler.pg.json",
+    "delete:pgbouncer": "wrangler delete -c wrangler.pgbouncer.json",
+    "delete:postgrest": "wrangler delete -c wrangler.postgrest.json",
+    "delete:hyperdrive": "wrangler delete -c wrangler.hyperdrive.json",
+    "delete:all": "wrangler delete -c wrangler.pg.json && wrangler delete -c wrangler.pgbouncer.json && wrangler delete -c wrangler.postgrest.json && wrangler delete -c wrangler.hyperdrive.json",
+    "deploy:workers": "pnpm run deploy:all",
+    "delete:workers": "pnpm run delete:all",
+    "cf-typegen": "wrangler types --env-interface CloudflareBindings"
+  },
+  "dependencies": {
+    "@repo/shared": "workspace:*",
+    "@types/node": "catalog:",
+    "hono": "catalog:"
+  },
+  "devDependencies": {
+    "wrangler": "^4.4.0"
+  }
+}

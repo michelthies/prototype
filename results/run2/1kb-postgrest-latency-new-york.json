@@ -1,0 +1,69 @@
+{
+  "metadata": {
+    "size": "1kb",
+    "pattern": "postgrest",
+    "suite": "latency",
+    "region": "new-york"
+  },
+  "data": {
+    "test": "latency",
+    "pattern": "postgrest",
+    "region": "new-york",
+    "workerUrl": "https://postgrest-cfworker.ZZZZZZZZZZZZZ.workers.dev",
+    "iterations": 200,
+    "successPct": 100,
+    "dropped": 0,
+    "latencies": {
+      "min": 102.668678,
+      "p50": 112.876542,
+      "p95": 230.97820724999997,
+      "p99": 271.34246435999995,
+      "max": 282.887522,
+      "count": 200
+    },
+    "warmup": {
+      "ttfb_ms": {
+        "min": 296.084852,
+        "p50": 296.084852,
+        "p99": 296.084852,
+        "max": 296.084852,
+        "count": 1
+      },
+      "success_rate": 1
+    },
+    "connection_metrics": {
+      "peak_connections": 2,
+      "idle_after_run": 2
+    },
+    "colo_distribution": {
+      "EWR": 200
+    },
+    "placement_colo_distribution": {
+      "FRA": 200
+    },
+    "isolate_tracking": {
+      "isolate_count": 19,
+      "isolate_ids": [
+        "b02fd175-2c31-4b9b-a43b-28d5677c0fb0",
+        "eb747ce4-eb31-4789-8062-234b4003aa62",
+        "c919b752-615e-469e-8d4e-5dd3bca49a34",
+        "bea38a97-b06c-4509-bd27-3f2ee502fb26",
+        "68cfc2e3-b9a3-4d53-ba04-53bbd5560afc",
+        "b489964b-149d-450a-aae1-a0e33fd686df",
+        "908cf56b-c0c9-4bfc-b90d-2caf28a51c2a",
+        "3b83d36b-4f96-4ea3-99de-2db8a18f0552",
+        "d3848ab6-68a2-48e7-8e0d-0848ac350ab5",
+        "3dfeced5-60e5-4622-a57a-bcdeef9dd5e0",
+        "ba366300-e300-4088-8c18-53ce36f837b6",
+        "4b62b599-ff64-47fa-b095-502143f0418a",
+        "cf5a6495-4812-44ff-a077-f059f513f770",
+        "5eca2ac6-8a54-460e-9561-87fd330bbf48",
+        "3b26b66f-ba9d-4275-aa08-25a27df08fe2",
+        "6921aba2-f57a-4019-8cc9-bf9725e7672d",
+        "d03b7aaa-782e-41ee-b8f9-7c8c65e077d0",
+        "b641ef4f-3005-40b3-b15f-caad097eb0e6",
+        "699388dc-2839-4161-adbb-b5cf068fc820"
+      ]
+    }
+  }
+}

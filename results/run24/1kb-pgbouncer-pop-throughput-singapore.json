@@ -1,0 +1,71 @@
+{
+  "metadata": {
+    "size": "1kb",
+    "pattern": "pgbouncer-pop",
+    "suite": "throughput",
+    "region": "singapore"
+  },
+  "data": {
+    "test": "throughput",
+    "pattern": "pgbouncer-pop",
+    "region": "singapore",
+    "workerUrl": "https://pgbouncer-cfworker-pop.ZZZZZZZZZZZZZ.workers.dev",
+    "vus": 20,
+    "duration": "5s",
+    "dropped": 0,
+    "measurement": {
+      "req_per_sec": 20,
+      "total_requests": 100,
+      "success_rate": 1,
+      "ttfb_ms": {
+        "p50": 1058.0311845,
+        "p95": 1151.6253104999998,
+        "p99": 1168.4454154500002
+      }
+    },
+    "warmup": {
+      "success_rate": 1,
+      "ttfb_ms": {
+        "min": 1017.092656,
+        "p50": 1102.7404115,
+        "p99": 1178.18240921,
+        "max": 1178.184968,
+        "count": 40
+      }
+    },
+    "connection_metrics": {
+      "peak_connections": 20,
+      "idle_after_run": 20
+    },
+    "colo_distribution": {
+      "SIN": 100
+    },
+    "isolate_tracking": {
+      "isolate_count": 22,
+      "isolate_ids": [
+        "87a28cd2-3153-4b11-af94-e19dd9464528",
+        "3e1509bc-1443-4871-a275-b403a9b6fd12",
+        "cf7586ba-a484-4385-8140-d69808467549",
+        "7f33868b-2f5b-45c7-b52a-f35722cecac0",
+        "6b58e60d-937e-4a5c-952b-999000989f99",
+        "df2c8130-045e-441f-bd2a-7b44ea566923",
+        "44de678f-62f7-4581-9ece-36b75e928573",
+        "542d1bd8-a6e9-461a-8f7e-36162571366d",
+        "1dbe43b9-583f-4ab2-b7ec-48a7fbe3a62a",
+        "95412b67-6a83-44ae-8eb5-54137dd05a01",
+        "146722f3-2228-4b93-bf55-babf3d45b307",
+        "8007bc37-869c-495a-b1ee-0925d1a33ffe",
+        "a8ae4fea-9dc8-403c-b6c8-dcb354a2f523",
+        "98b8aa19-4e08-4c61-9eb0-b96c73073243",
+        "5b875f91-725c-4144-a572-580b93615646",
+        "2ebc4dd4-df67-439c-82ae-69d394c59bc6",
+        "a0115e8b-38b4-41b1-bc18-b36046a3d546",
+        "41aec18d-597c-44d5-81e2-540a782ac85a",
+        "7f3e8b49-c60a-477a-85ee-61305ffe426d",
+        "815fe6a1-1ab9-4ce1-915d-172948f34ca9",
+        "e64052e0-d528-490a-a34c-357f7e6aa219",
+        "12c72369-0c4d-422f-96df-357fca1241bb"
+      ]
+    }
+  }
+}

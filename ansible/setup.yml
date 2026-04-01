@@ -1,0 +1,167 @@
+- name: configure vps
+  hosts: vps
+  gather_facts: false
+  tags: vps
+
+  vars:
+    vps_domain: "static.{{ inventory_hostname.split('.') | reverse | join('.') }}.clients.your-server.de"
+
+  pre_tasks:
+    - name: remove stale vps host key
+      delegate_to: localhost
+      command: ssh-keygen -R {{ inventory_hostname }}
+      ignore_errors: true
+
+  tasks:
+    - name: wait for connection
+      wait_for_connection:
+
+    - name: create files
+      file:
+        path: "{{ item }}"
+        state: directory
+      loop: [/opt/prototypes/db, /opt/prototypes/certs]
+
+    - name: sync workspace to vps
+      ansible.posix.synchronize:
+        src: "{{ playbook_dir }}/../"
+        dest: /opt/prototypes/
+        rsync_opts:
+          - "--exclude=.git"
+          - "--exclude=node_modules"
+          - "--exclude=ansible/"
+          - "--exclude=ansible.cfg"
+          - "--exclude=terraform/"
+          - "--exclude=certs/"
+          - "--exclude=results/"
+          - "--exclude=docker-compose.yml"
+          - "--exclude=ips.json"
+          - "--exclude=pgbouncer/"
+
+    - name: generate ssl certificate
+      command: >
+        openssl req -new -x509 -days 365 -nodes
+        -out /opt/prototypes/certs/server.crt
+        -keyout /opt/prototypes/certs/server.key
+        -subj /CN=postgres
+      args:
+        creates: /opt/prototypes/certs/server.crt
+
+    - name: set postgres cert permissions
+      file:
+        path: /opt/prototypes/certs/server.key
+        mode: "0600"
+        owner: "70"
+        group: "70"
+
+    - name: write .env
+      copy:
+        dest: /opt/prototypes/.env
+        mode: "0600"
+        content: |
+          VPS_DOMAIN={{ vps_domain }}
+          DB_PASSWORD={{ lookup('ini', 'DB_PASSWORD type=properties file=../.env') }}
+          JWT_SECRET={{ lookup('ini', 'JWT_SECRET type=properties file=../.env') }}
+
+    - name: start services
+      command: docker compose -f docker-compose.prod.yml up --build -d
+      args:
+        chdir: /opt/prototypes
+
+    - name: wait for db
+      command: docker exec psql-db pg_isready -U postgres -q
+      register: pg_ready
+      until: pg_ready.rc == 0
+      retries: 30
+      delay: 2
+
+    - name: seed db
+      delegate_to: localhost
+      command: pnpm db:seed
+      args:
+        chdir: "{{ playbook_dir }}/.."
+      environment:
+        DB_URL: postgresql://postgres:{{ lookup('ini', 'DB_PASSWORD type=properties file=../.env') }}@{{ inventory_hostname }}:5432/tenant_db
+
+- name: configure digitalocean droplets
+  hosts: geo
+  gather_facts: false
+  tags: droplets
+
+  tasks:
+    - name: Wait for cloud-init to finish
+      raw: cloud-init status --wait
+      changed_when: false
+
+    - name: Copy k6 scripts
+      copy:
+        src: "{{ playbook_dir }}/../scripts/k6/{{ item }}"
+        dest: "/opt/geo-runner/{{ item }}"
+      loop:
+        [
+          common.js,
+          latency.js,
+          throughput.js,
+          concurrency.js,
+          burst.js,
+          payloads.js
+        ]
+
+- name: redeploy all
+  hosts: vps
+  gather_facts: false
+  tags: redeploy
+
+  vars:
+    vps_domain: "static.{{ inventory_hostname.split('.') | reverse | join('.') }}.clients.your-server.de"
+
+  tasks:
+    - name: sync workspace to vps
+      ansible.posix.synchronize:
+        src: "{{ playbook_dir }}/../"
+        dest: /opt/prototypes/
+        rsync_opts:
+          - "--exclude=.git"
+          - "--exclude=node_modules"
+          - "--exclude=ansible/"
+          - "--exclude=ansible.cfg"
+          - "--exclude=terraform/"
+          - "--exclude=certs/"
+          - "--exclude=results/"
+          - "--exclude=docker-compose.yml"
+          - "--exclude=ips.json"
+          - "--exclude=pgbouncer/"
+
+    - name: write .env
+      copy:
+        dest: /opt/prototypes/.env
+        mode: "0600"
+        content: |
+          VPS_DOMAIN={{ vps_domain }}
+          DB_PASSWORD={{ lookup('ini', 'DB_PASSWORD type=properties file=../.env') }}
+          JWT_SECRET={{ lookup('ini', 'JWT_SECRET type=properties file=../.env') }}
+
+    - name: take down docker compose
+      command: docker compose -f docker-compose.prod.yml down --remove-orphans
+      args:
+        chdir: /opt/prototypes
+
+    - name: start services
+      command: docker compose -f docker-compose.prod.yml up --build --force-recreate -d
+      args:
+        chdir: /opt/prototypes
+
+    - name: wait for db
+      command: docker exec psql-db pg_isready -U postgres -q
+      register: pg_ready
+      until: pg_ready.rc == 0
+      retries: 30
+      delay: 2
+
+    - name: seed db
+      delegate_to: localhost
+      command: pnpm db:seed
+      args:
+        chdir: "{{ playbook_dir }}/.."
+      environment:
+        DB_URL: "postgresql://postgres:{{ lookup('ini', 'DB_PASSWORD type=properties file=../.env') }}@{{ inventory_hostname }}:5432/tenant_db"

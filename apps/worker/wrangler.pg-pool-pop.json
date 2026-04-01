@@ -1,0 +1,20 @@
+{
+  "name": "pg-pool-cfworker-pop",
+  "main": "src/index.ts",
+  "compatibility_date": "2026-02-14",
+  "compatibility_flags": [
+    "nodejs_compat"
+  ],
+  "vars": {
+    "DB_CLIENT": "pg-pool-worker",
+    "NODE_ENV": "production",
+    "JWT_SECRET": "YYYYYYYYYYYYYYYYYYYYYYY",
+    "DB_URL": "postgresql://agency_pg-pool:XXXXXXXXXXXXXXXXXXXXXXX@TTTTTTTTTT:5432/tenant_db"
+  },
+  "observability": {
+    "logs": {
+      "enabled": true,
+      "invocation_logs": true
+    }
+  }
+}

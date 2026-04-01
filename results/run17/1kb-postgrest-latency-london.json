@@ -1,0 +1,93 @@
+{
+  "metadata": {
+    "size": "1kb",
+    "pattern": "postgrest",
+    "suite": "latency",
+    "region": "london"
+  },
+  "data": {
+    "test": "latency",
+    "pattern": "postgrest",
+    "region": "london",
+    "workerUrl": "https://postgrest-cfworker.ZZZZZZZZZZZZZ.workers.dev",
+    "iterations": 200,
+    "successPct": 100,
+    "dropped": 0,
+    "latencies": {
+      "min": 34.53222,
+      "p50": 44.252127,
+      "p95": 186.21232844999997,
+      "p99": 215.76391734999993,
+      "max": 561.697779,
+      "count": 200
+    },
+    "warmup": {
+      "ttfb_ms": {
+        "min": 217.431027,
+        "p50": 217.431027,
+        "p99": 217.431027,
+        "max": 217.431027,
+        "count": 1
+      },
+      "success_rate": 1
+    },
+    "connection_metrics": {
+      "peak_connections": 2,
+      "idle_after_run": 2
+    },
+    "colo_distribution": {
+      "LHR": 200
+    },
+    "placement_colo_distribution": {
+      "FRA": 200
+    },
+    "isolate_tracking": {
+      "isolate_count": 43,
+      "isolate_ids": [
+        "5eaac267-f59a-4e47-9900-597e97217c10",
+        "6a3d3e2b-9cc8-4667-ad1f-89a2097ca91f",
+        "42df3e4c-579f-4bc6-a8a7-31cc89724f9e",
+        "50b3b383-1802-4f5e-97f1-7f6280c05123",
+        "d63ce4ed-ba7a-4494-a4c7-c9ec96b3079f",
+        "e786092f-94e7-4978-8385-f9f0f60431dd",
+        "65fcd142-ae23-4f4d-802b-9511b04b61f6",
+        "32f2c2fc-4990-464b-a5ee-365ff25d52aa",
+        "868c0039-1eed-4aef-a1c8-b02cd1caecf7",
+        "bbbe2412-c9d0-4faa-9c7a-b5638e0a6362",
+        "0252267f-a95f-45a0-a5e5-db8319b3e1a3",
+        "a9b3b63d-b323-4a06-9810-5dba05d79d59",
+        "43f1744e-fb8e-4a39-b188-eb7c66ffc50a",
+        "157b96a7-5838-4851-bd28-f0d73f5b6f6a",
+        "2fd732f5-4e9e-4544-9840-d922accc1073",
+        "b1b944c4-9ec9-4b69-81cb-00cffbf3ccc3",
+        "353730c6-462f-4594-828f-221eb9e0165a",
+        "62f69295-aa52-45bf-b837-c19cc1f37b21",
+        "c58ccb07-554e-474a-9468-dc2174b044a8",
+        "c5931967-8344-4030-beb8-e473930a6853",
+        "75e0c42b-39c2-457a-8319-68615510ad01",
+        "9f12dcab-41bf-47ba-9d38-ed08b2b58ffe",
+        "fa3dc7be-a19f-4057-824b-514c3be5d767",
+        "14c62abd-dc2e-4c04-a661-5c902fc451a9",
+        "6aca101d-f52a-4ac0-9bc2-3339321ffe53",
+        "ba4a76cf-3061-4329-a373-9b9ff98df906",
+        "c17928de-0c02-44ea-8e3f-b2c6bb315841",
+        "eb19351b-80c1-4931-8946-e33272356d50",
+        "176c7680-e94b-47e2-8474-b4d5ee5e9403",
+        "6c587ff1-b7c4-4908-81e9-a156cca506d1",
+        "d61a86a6-3f81-4e95-bd94-d5a28e24c647",
+        "1524da66-231a-420b-8dba-785c9d3e3c50",
+        "a4d286f8-3625-4039-936b-d94dc050cfb1",
+        "30387db6-e2fa-48b7-a3bc-3efb87034b6a",
+        "64905153-22b0-454e-a188-e71b5882150f",
+        "15300b88-d04a-4088-8644-113ffa28e2d0",
+        "f631e63a-1084-4a7a-8a29-693b2f9e962e",
+        "419ee5e9-8bc9-4bd6-aa96-3f695cf8d81e",
+        "56abb2f1-be42-4b1b-97b2-f5de692461bc",
+        "68f20949-7028-4539-bb39-4bd6488b236f",
+        "2796bc78-d8cc-47af-bba2-ec7a054cfe4c",
+        "39795162-4fe8-46a4-993d-ae3719f683f3",
+        "70be7046-9e2a-4429-86b7-da28bfaf9f15"
+      ]
+    }
+  }
+}

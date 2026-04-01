@@ -1,0 +1,59 @@
+{
+  "metadata": {
+    "size": "1kb",
+    "pattern": "pg-pop",
+    "suite": "throughput",
+    "region": "london"
+  },
+  "data": {
+    "test": "throughput",
+    "pattern": "pg-pop",
+    "region": "london",
+    "workerUrl": "https://pg-cfworker-pop.ZZZZZZZZZZZZZ.workers.dev",
+    "vus": 20,
+    "duration": "5s",
+    "dropped": 0,
+    "measurement": {
+      "req_per_sec": 102.6,
+      "total_requests": 513,
+      "success_rate": 1,
+      "ttfb_ms": {
+        "p50": 193.644454,
+        "p95": 210.2113436,
+        "p99": 256.82767703999997
+      }
+    },
+    "warmup": {
+      "success_rate": 1,
+      "ttfb_ms": {
+        "min": 187.532521,
+        "p50": 201.495682,
+        "p99": 294.5446481,
+        "max": 313.307339,
+        "count": 200
+      }
+    },
+    "connection_metrics": {
+      "peak_connections": 14,
+      "idle_after_run": 0
+    },
+    "colo_distribution": {
+      "LHR": 513
+    },
+    "isolate_tracking": {
+      "isolate_count": 10,
+      "isolate_ids": [
+        "712bf826-7054-4a38-8262-09859080e652",
+        "b7daf2aa-0689-479f-a18e-eb4626688aee",
+        "b8bbe3ef-42ce-451c-9d1f-7603af417fd8",
+        "c084cfd7-2fac-4ad7-9e36-9982f066f8f9",
+        "8b785a36-3eff-4e55-9ffe-f4318d988077",
+        "29a124f8-d339-4b51-99a6-833b04e29736",
+        "63abc458-92b8-405e-8f52-436bbc90608d",
+        "ee6b6ff1-aeb9-46cf-9807-0bcb2d3ef3c1",
+        "cc62b27e-1d97-4ee2-a0d6-5faf6bbfb67b",
+        "1c9d016d-cae7-487b-a303-efa4bde61dd0"
+      ]
+    }
+  }
+}

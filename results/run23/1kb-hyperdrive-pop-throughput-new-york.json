@@ -1,0 +1,70 @@
+{
+  "metadata": {
+    "size": "1kb",
+    "pattern": "hyperdrive-pop",
+    "suite": "throughput",
+    "region": "new-york"
+  },
+  "data": {
+    "test": "throughput",
+    "pattern": "hyperdrive-pop",
+    "region": "new-york",
+    "workerUrl": "https://hyperdrive-cfworker-pop.ZZZZZZZZZZZZZ.workers.dev",
+    "vus": 20,
+    "duration": "5s",
+    "dropped": 0,
+    "measurement": {
+      "req_per_sec": 162.4,
+      "total_requests": 812,
+      "success_rate": 1,
+      "ttfb_ms": {
+        "p50": 112.99596199999999,
+        "p95": 191.73514329999986,
+        "p99": 236.20251183
+      }
+    },
+    "warmup": {
+      "success_rate": 1,
+      "ttfb_ms": {
+        "min": 96.47789,
+        "p50": 114.4969475,
+        "p99": 298.5741350699997,
+        "max": 318.498887,
+        "count": 304
+      }
+    },
+    "connection_metrics": {
+      "peak_connections": 19,
+      "idle_after_run": 19
+    },
+    "colo_distribution": {
+      "EWR": 812
+    },
+    "isolate_tracking": {
+      "isolate_count": 21,
+      "isolate_ids": [
+        "783ead7a-cadb-46ce-8731-f20a11e31943",
+        "b1775067-c4bd-4445-8835-eaaa2176bcb3",
+        "6aba1133-4446-4b4a-87a0-3aca0d6caec7",
+        "d8095782-e632-44ca-84a8-ea0fe91d0a68",
+        "25af1639-7231-41fd-98af-25c5a0c4602d",
+        "5c8bdb67-6be4-4879-bb20-611a4fcb3590",
+        "7b82993a-b3a2-4a04-ada0-86788720d525",
+        "fd7379d7-0afd-4c42-8a17-a37dd1d1c0e5",
+        "216f1b1c-ab6f-4418-b6e6-92d872cee0aa",
+        "8026d399-da0f-4cc6-8ab2-61efd2331e69",
+        "a15b9131-f297-44dd-8c6d-a3b7bfbaac38",
+        "66729d23-54f9-49eb-8ed0-48530570d649",
+        "21572d6b-8de3-4da8-b335-4c1ecec723bd",
+        "17693c95-02ce-43ff-a252-a17e64d475af",
+        "26884997-59ce-4e91-bf03-6dfc7ee4fdbd",
+        "3353ef34-7a76-4412-b50c-fe4790a367ce",
+        "6a5263ff-1210-4d5d-96bc-581eff704bf6",
+        "b2f21aaa-87f7-46e1-abbe-448561ae8db9",
+        "10d5e61b-18a1-4e6f-a161-667694ac5dc4",
+        "ce62901b-cb66-4da4-bbe6-583be078fcc3",
+        "57000651-1c4c-4a2d-8546-abe8198543c5"
+      ]
+    }
+  }
+}

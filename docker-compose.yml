@@ -1,0 +1,118 @@
+services:
+  db:
+    image: postgres:17-alpine
+    container_name: psql-db
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: tenant_db
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+
+    ports:
+      - "5432:5432"
+    command: >
+      postgres
+        -c shared_preload_libraries=pg_stat_statements
+        -c pg_stat_statements.track=all
+        -c pg_stat_statements.max=10000
+        -c max_connections=50
+        -c superuser_reserved_connections=3
+        -c shared_buffers=2GB
+        -c effective_cache_size=6GB
+        -c work_mem=8MB
+        -c maintenance_work_mem=256MB
+        -c max_parallel_workers=4
+        -c max_parallel_workers_per_gather=2
+        -c wal_buffers=64MB
+        -c checkpoint_completion_target=0.9
+        -c log_connections=on
+        -c log_disconnections=on
+        -c ssl=on
+        -c ssl_cert_file=/certs/server.crt
+        -c ssl_key_file=/certs/server.key
+    volumes:
+      - db-data:/var/lib/postgresql/data
+      - ./db/schema.sql:/docker-entrypoint-initdb.d/schema.sql
+      - ./certs:/certs:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d tenant_db"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  pgbouncer:
+    image: edoburu/pgbouncer:latest
+    container_name: pgbouncer
+    restart: unless-stopped
+    environment:
+      DB_USER: agency_pgbouncer
+      DB_PASSWORD: ${DB_PASSWORD}
+      DB_HOST: db
+      DB_NAME: tenant_db
+      AUTH_TYPE: plain
+      POOL_MODE: transaction
+      DEFAULT_POOL_SIZE: "20"
+      MAX_CLIENT_CONN: "2000"
+      SERVER_CONNECT_TIMEOUT: "5"
+      CLIENT_IDLE_TIMEOUT: "10"
+      SERVER_IDLE_TIMEOUT: "30"
+    ports:
+      - "6432:5432"
+    depends_on:
+      db:
+        condition: service_healthy
+
+  postgrest:
+    image: postgrest/postgrest:v14.0
+    container_name: postgrest
+    restart: unless-stopped
+    environment:
+      PGRST_DB_URI: postgresql://agency_postgrest:${DB_PASSWORD}@db:5432/tenant_db
+      PGRST_DB_SCHEMAS: public
+      PGRST_DB_ANON_ROLE: postgrest_anon
+      PGRST_JWT_SECRET: ${JWT_SECRET}
+      PGRST_DB_POOL: "20"
+      PGRST_DB_POOL_ACQUISITION_TIMEOUT: "5"
+      PGRST_DB_POOL_MAX_IDLETIME: "30"
+    depends_on:
+      db:
+        condition: service_healthy
+
+  caddy:
+    image: caddy:2-alpine
+    container_name: caddy
+    restart: unless-stopped
+    ports:
+      - "80:80"
+      - "443:443"
+      - "3001:3001"
+    environment:
+      - VPS_DOMAIN=${VPS_DOMAIN}
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile:ro
+      - caddy_data:/data
+      - caddy_config:/config
+    depends_on:
+      - postgrest
+      - node
+
+  node:
+    build:
+      context: .
+      dockerfile: Dockerfile.node
+    image: prototypes/node:latest
+    container_name: node
+    restart: unless-stopped
+    environment:
+      JWT_SECRET: ${JWT_SECRET}
+      DB_CLIENT: pg-pool
+      DB_URL: postgresql://agency_node:${DB_PASSWORD}@db:5432/tenant_db
+      NODE_ENV: dev
+    depends_on:
+      db:
+        condition: service_healthy
+
+volumes:
+  db-data:
+  caddy_data:
+  caddy_config:

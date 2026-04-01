@@ -1,0 +1,28 @@
+{
+  "name": "prototypes",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev:worker": "pnpm --filter worker dev",
+    "dev:node": "pnpm --filter node dev",
+    "infra:up": "cd terraform && terraform init && terraform apply -auto-approve",
+    "infra:down": "cd terraform && terraform destroy -auto-approve",
+    "setup": "ansible-playbook ansible/setup.yml",
+    "setup:vps": "ansible-playbook ansible/setup.yml --tags vps",
+    "setup:droplets": "ansible-playbook ansible/setup.yml --tags droplets",
+    "setup:redeploy": "ansible-playbook ansible/setup.yml --tags redeploy",
+    "deploy:workers": "pnpm --filter worker run deploy:all",
+    "delete:workers": "pnpm --filter worker run delete:all",
+    "db:seed": "tsx db/seed.ts",
+    "test:remote": "tsx scripts/test.ts"
+  },
+  "devDependencies": {
+    "@types/bcryptjs": "catalog:",
+    "@types/node": "catalog:",
+    "@types/pg": "catalog:",
+    "bcryptjs": "catalog:",
+    "pg": "catalog:",
+    "tsx": "catalog:"
+  }
+}

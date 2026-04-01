@@ -1,0 +1,111 @@
+{
+  "metadata": {
+    "size": "10kb",
+    "pattern": "hyperdrive",
+    "suite": "latency",
+    "region": "new-york"
+  },
+  "data": {
+    "test": "latency",
+    "pattern": "hyperdrive",
+    "region": "new-york",
+    "workerUrl": "https://hyperdrive-cfworker.ZZZZZZZZZZZZZ.workers.dev",
+    "iterations": 200,
+    "successPct": 100,
+    "dropped": 0,
+    "latencies": {
+      "min": 108.592329,
+      "p50": 116.91538299999999,
+      "p95": 224.72260009999994,
+      "p99": 307.3848691199987,
+      "max": 691.106005,
+      "count": 200
+    },
+    "warmup": {
+      "ttfb_ms": {
+        "min": 240.335882,
+        "p50": 240.335882,
+        "p99": 240.335882,
+        "max": 240.335882,
+        "count": 1
+      },
+      "success_rate": 1
+    },
+    "connection_metrics": {
+      "peak_connections": 5,
+      "idle_after_run": 5
+    },
+    "colo_distribution": {
+      "EWR": 200
+    },
+    "placement_colo_distribution": {
+      "FRA": 200
+    },
+    "isolate_tracking": {
+      "isolate_count": 61,
+      "isolate_ids": [
+        "14b3cfaf-4a4c-4c51-b1bf-ecb5ae5c0870",
+        "24c35a61-1d6f-4bc6-a836-f446157ead66",
+        "fee207bb-6f87-42de-95d4-750a78d16036",
+        "26e99804-8ec1-4708-acd5-c555aeded744",
+        "35ee0a06-3c67-4854-9ed0-e8206aa886cd",
+        "f13083ec-ef32-418a-8adf-087e44efc72b",
+        "f6d4ea4d-0369-47d4-b487-2185c45ec60d",
+        "fc38dae0-2bd7-4213-a374-58ec62ee2f57",
+        "23d1e626-24be-4288-b948-1dd2e3dda8b0",
+        "3e621de2-b298-4d5d-bda9-56f71f85e40f",
+        "bf604e22-a2f6-411a-84d0-35e242af0d0d",
+        "36d42886-f554-47a8-a4d0-d85fbb88f86d",
+        "6be80448-59b6-4d8d-acaf-709251f68e63",
+        "b7564070-bb87-4e5e-8723-07010d73451d",
+        "4bd146fe-0949-482e-a15b-2fc31920c13e",
+        "ef76f98f-b524-4413-ae94-82428eafb47d",
+        "61329fad-aa8e-43bf-81c6-20577dfb65b1",
+        "1089931b-32f4-4765-ab61-35b6b0b2a2bd",
+        "6ff7e903-4db8-4679-918e-cd9da5479fc6",
+        "bbf7618c-6071-49a4-bf97-d5cf3c2ef1a5",
+        "fd848ed6-269d-43cb-998d-37c4cfb856bf",
+        "46674ebb-538a-48d5-bce6-0f70a897c124",
+        "15e565ef-1586-4ad8-af3d-67f5f4732973",
+        "7c45a171-ff1c-4891-926a-ceecc6297aa7",
+        "b51bbc99-2458-4e8f-bfb0-4fa7c1664517",
+        "c7a6e87e-73f2-4910-95c8-ba3e79ab7b12",
+        "80e22d76-6878-4a8f-8fdc-51afd9a06e62",
+        "b13a0548-c6f0-4a13-8189-ee128b0d5eb0",
+        "770ad82a-c831-4d14-bf60-9b01fb047d95",
+        "cdc74ec6-4d5d-4706-b204-659d18fccd3f",
+        "52619004-2b2d-44d2-9434-1a97228d21e6",
+        "7e4e1d3f-f8c3-4b5e-a8c1-5af32d876144",
+        "56ba2a93-7d75-408b-8a2d-42153b9db4ad",
+        "bd42e891-5af2-4726-843d-6da6618a85fa",
+        "42deed3d-ceb5-4e35-b7d7-a5fa20f86786",
+        "eb6c839f-e133-4217-be93-2e0e0567f034",
+        "9519cc61-d0da-435d-b60b-d0ed4f5f16c2",
+        "a1ed3bb1-240f-4d14-9c3f-de3750ba64dc",
+        "11b8c1a6-db80-43fe-83ce-ea2a1b2a3947",
+        "0c5d5057-d361-4166-91e0-7509e8efe710",
+        "c969d344-6bfc-4a1f-9b2c-5aebb981f746",
+        "8d0827c5-e179-4615-85a8-ab5235e8eacf",
+        "9d1756f6-febc-4011-83b5-9e52f099436a",
+        "c214a211-cf92-4af4-bf16-96ff616ede2f",
+        "fae5f2f7-35c1-4ef5-8bd4-b5502d9373d9",
+        "c8e4d33d-501a-46a3-b365-e9df753e4b63",
+        "e68aa4ce-53db-474f-a3da-d1b17e320ac7",
+        "a76628e8-1d17-433b-8e93-5145be816392",
+        "a8ef40b9-52b9-42f6-b21d-29d061ac24b4",
+        "6ac34ce8-c300-49d2-974c-43bf0eb4eb9e",
+        "0ccb0f0b-db4d-4a3a-b66b-6ed245150a60",
+        "c3041bcb-96ba-48e0-91be-7e5d190610a4",
+        "db1a0525-4e94-4c0d-9f16-991e58ebf3ac",
+        "bc4a6db5-c91c-460f-af97-6336ef83aaf2",
+        "fb0986bb-9310-4776-b5de-232917b978c2",
+        "9e25f6df-e84c-46f9-9d32-22f42159d87e",
+        "7dad7b74-e080-4408-9a83-0dc020360978",
+        "9f0d00b9-e500-4d02-999d-709938cccda2",
+        "7cab28a4-067e-473d-bb5f-92fa6d643f50",
+        "0cd65408-adb3-479a-a83f-42bcb2666ea3",
+        "004bd19c-f25b-4f1d-8681-d6dc49f9cca5"
+      ]
+    }
+  }
+}

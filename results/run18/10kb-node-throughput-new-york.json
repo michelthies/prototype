@@ -1,0 +1,50 @@
+{
+  "metadata": {
+    "size": "10kb",
+    "pattern": "node",
+    "suite": "throughput",
+    "region": "new-york"
+  },
+  "data": {
+    "test": "throughput",
+    "pattern": "node",
+    "region": "new-york",
+    "workerUrl": "https://static.WWWWWWclients.your-server.de:3001",
+    "vus": 20,
+    "duration": "5s",
+    "dropped": 0,
+    "measurement": {
+      "req_per_sec": 192.6,
+      "total_requests": 963,
+      "success_rate": 1,
+      "ttfb_ms": {
+        "p50": 94.020638,
+        "p95": 109.75506719999998,
+        "p99": 178.28125223999996
+      }
+    },
+    "warmup": {
+      "success_rate": 1,
+      "ttfb_ms": {
+        "min": 86.718641,
+        "p50": 91.6992455,
+        "p99": 268.02119405,
+        "max": 283.119122,
+        "count": 352
+      }
+    },
+    "connection_metrics": {
+      "peak_connections": 20,
+      "idle_after_run": 20
+    },
+    "colo_distribution": {
+      "NODE": 963
+    },
+    "isolate_tracking": {
+      "isolate_count": 1,
+      "isolate_ids": [
+        "53302c89-c5b7-4610-b942-0f7c6f2bf4b7"
+      ]
+    }
+  }
+}

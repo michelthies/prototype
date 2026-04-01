@@ -1,0 +1,20 @@
+{
+  "name": "pgbouncer-cfworker-pop",
+  "main": "src/index.ts",
+  "compatibility_date": "2026-02-14",
+  "compatibility_flags": [
+    "nodejs_compat"
+  ],
+  "vars": {
+    "DB_CLIENT": "pgbouncer",
+    "NODE_ENV": "production",
+    "JWT_SECRET": "YYYYYYYYYYYYYYYYYYYYYYY",
+    "DB_URL_PGBOUNCER": "postgresql://agency_pgbouncer:XXXXXXXXXXXXXXXXXXXXXXX@TTTTTTTTTT:6432/tenant_db"
+  },
+  "observability": {
+    "logs": {
+      "enabled": true,
+      "invocation_logs": true
+    }
+  }
+}

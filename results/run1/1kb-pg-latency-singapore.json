@@ -1,0 +1,71 @@
+{
+  "metadata": {
+    "size": "1kb",
+    "pattern": "pg",
+    "suite": "latency",
+    "region": "singapore"
+  },
+  "data": {
+    "test": "latency",
+    "pattern": "pg",
+    "region": "singapore",
+    "workerUrl": "https://pg-cfworker.ZZZZZZZZZZZZZ.workers.dev",
+    "iterations": 200,
+    "successPct": 100,
+    "dropped": 0,
+    "latencies": {
+      "min": 257.885907,
+      "p50": 275.4376385,
+      "p95": 469.4347162,
+      "p99": 603.4668586399991,
+      "max": 948.706178,
+      "count": 200
+    },
+    "warmup": {
+      "ttfb_ms": {
+        "min": 354.421171,
+        "p50": 354.421171,
+        "p99": 354.421171,
+        "max": 354.421171,
+        "count": 1
+      },
+      "success_rate": 1
+    },
+    "connection_metrics": {
+      "peak_connections": 1,
+      "idle_after_run": 0
+    },
+    "colo_distribution": {
+      "SIN": 200
+    },
+    "placement_colo_distribution": {
+      "FRA": 200
+    },
+    "isolate_tracking": {
+      "isolate_count": 21,
+      "isolate_ids": [
+        "057c594e-6a95-4290-a52e-2d2d55d9f02e",
+        "69a7669d-b53b-4295-87c3-b8b10a500d53",
+        "501eac39-eed1-4acc-9d29-43b62af29034",
+        "3f384320-67fc-4900-bcc7-ccc938dceaa3",
+        "c4d9fc3e-b307-47b5-a73e-31f51fc872f9",
+        "6218f653-6352-45a9-a4ab-b964de487130",
+        "3e402fc7-ef61-42fa-9876-924287c1bb7b",
+        "142af7fd-c1e8-47c0-aeb7-eb5bc6c4f8fc",
+        "e026017f-a139-434a-980d-c378cd66e669",
+        "de316b2d-6987-4406-be55-6ece5206e571",
+        "923f2aac-0a17-4d23-bf48-cbf782a2f74d",
+        "cce06584-9256-4697-bd29-cf67e562f958",
+        "f9349112-f232-4364-8018-1ba08a0e1245",
+        "9d480fa4-0ef5-46c1-ad5c-2eb0ce78e1a7",
+        "36afdc7c-f2db-4ccb-93d8-67aba6183893",
+        "ac7b6b91-f9dc-47c5-95b4-6091ed909d5a",
+        "c78472fc-a892-456d-a30f-a85b4a6dce9a",
+        "858b4408-7e08-48d0-88da-855dcc241f33",
+        "7eb7516f-298b-48c8-9b15-9c8102ab5499",
+        "1aa2ec12-5461-433b-8752-89ee3a59134c",
+        "8b0cf728-60c2-4a49-933a-f15ab86d691d"
+      ]
+    }
+  }
+}

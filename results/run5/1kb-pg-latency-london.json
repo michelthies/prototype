@@ -1,0 +1,76 @@
+{
+  "metadata": {
+    "size": "1kb",
+    "pattern": "pg",
+    "suite": "latency",
+    "region": "london"
+  },
+  "data": {
+    "test": "latency",
+    "pattern": "pg",
+    "region": "london",
+    "workerUrl": "https://pg-cfworker.ZZZZZZZZZZZZZ.workers.dev",
+    "iterations": 200,
+    "successPct": 100,
+    "dropped": 0,
+    "latencies": {
+      "min": 116.984304,
+      "p50": 128.00507,
+      "p95": 234.82132165,
+      "p99": 410.9329508299965,
+      "max": 816.838134,
+      "count": 200
+    },
+    "warmup": {
+      "ttfb_ms": {
+        "min": 222.778748,
+        "p50": 222.778748,
+        "p99": 222.778748,
+        "max": 222.778748,
+        "count": 1
+      },
+      "success_rate": 1
+    },
+    "connection_metrics": {
+      "peak_connections": 1,
+      "idle_after_run": 0
+    },
+    "colo_distribution": {
+      "LHR": 200
+    },
+    "placement_colo_distribution": {
+      "FRA": 200
+    },
+    "isolate_tracking": {
+      "isolate_count": 26,
+      "isolate_ids": [
+        "b6d4fdb3-ddac-40bc-98ae-01d322f873a5",
+        "2becbc18-b2ad-462b-907e-aea3aeae18bc",
+        "5d6eb951-b260-4850-b513-6bb21a85370f",
+        "75f3f848-7125-4b1d-a36f-523750378730",
+        "bf366bbc-3923-4f40-aa1c-96c06c28a0f7",
+        "6aad56f3-b52c-4b54-a2f8-acf81fa5816f",
+        "298a79c2-681d-48e0-872b-59aa5af22981",
+        "8cce6a57-9083-4f7a-a8c9-e816a909cc1a",
+        "fa69086f-81b1-4882-93c0-f30551c38209",
+        "4015d688-78dd-44a2-a56e-65f2e09dba7e",
+        "9506f9f5-6420-4a36-a68f-839eafcad0e8",
+        "e8b90c78-c4b8-4a12-b868-a28bb3dbf564",
+        "1a955ac8-0808-4ff7-8862-36dbf81fd6c5",
+        "7c9d5e72-81bc-4775-bd2d-d477f6630fc0",
+        "4511a575-e752-48ab-849f-1440574c25f2",
+        "c11e7766-9e84-4a4d-8a39-30c55cd1177c",
+        "17e40509-e86b-40a6-b186-936834ded1b1",
+        "9d11afb0-543c-42ab-b5e9-9e06d975de15",
+        "633cb83c-b3fe-4aa1-b913-6514ca16079d",
+        "15564bd2-2fb4-4c27-9c04-76a168752734",
+        "d82e4863-875b-4f1c-8773-dc23ec3df418",
+        "dd617aa0-cfe7-41b6-bf3f-e799b7767ff1",
+        "45f99fa9-2ca0-432e-8f32-9fe4767049e6",
+        "f794b1fa-5585-457e-afd0-a8fadd9fd7d4",
+        "b8535811-2f03-4d79-998b-beb66a7fd1e2",
+        "a5683971-5f6a-499d-a649-aee03bda1a73"
+      ]
+    }
+  }
+}

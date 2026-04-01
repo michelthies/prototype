@@ -1,0 +1,112 @@
+{
+  "metadata": {
+    "size": "1kb",
+    "pattern": "pg",
+    "suite": "latency",
+    "region": "new-york"
+  },
+  "data": {
+    "test": "latency",
+    "pattern": "pg",
+    "region": "new-york",
+    "workerUrl": "https://pg-cfworker.ZZZZZZZZZZZZZ.workers.dev",
+    "iterations": 200,
+    "successPct": 100,
+    "dropped": 0,
+    "latencies": {
+      "min": 178.284934,
+      "p50": 202.25715350000002,
+      "p95": 314.56081114999995,
+      "p99": 329.76191580999955,
+      "max": 408.069848,
+      "count": 200
+    },
+    "warmup": {
+      "ttfb_ms": {
+        "min": 277.186346,
+        "p50": 277.186346,
+        "p99": 277.186346,
+        "max": 277.186346,
+        "count": 1
+      },
+      "success_rate": 1
+    },
+    "connection_metrics": {
+      "peak_connections": 1,
+      "idle_after_run": 0
+    },
+    "colo_distribution": {
+      "EWR": 200
+    },
+    "placement_colo_distribution": {
+      "FRA": 200
+    },
+    "isolate_tracking": {
+      "isolate_count": 62,
+      "isolate_ids": [
+        "ed247be5-5bf8-4ad7-afa0-d1ef7e1d1cf4",
+        "9e3c926b-519c-449c-82ba-882ce5ec62d4",
+        "dc0041c8-e42e-4e3d-8468-4c7d1144e678",
+        "fca94f75-b5c9-4e6e-b853-e6d75504271d",
+        "049bc0c5-5e05-4aea-a26d-4491416f0e63",
+        "98135c1a-feb9-4f59-b3cf-25e3b6952167",
+        "e3b0952b-fa13-44fa-814d-6b2ac8b9e959",
+        "e450c9d5-08d0-4ce2-a625-61e65eb3bc72",
+        "9a178d00-345c-4cec-acd8-eee169710052",
+        "d1759130-5076-42bb-910c-6b63f2ee740c",
+        "c5bea490-6932-4762-b615-a9f9ac825a2d",
+        "02f34b19-4ea4-4f04-b98d-9b79fd2b554c",
+        "447c64ad-d16f-4533-bb8f-82ce0e904048",
+        "ef377f9b-ab44-4d93-ad0e-196692048f51",
+        "aca3dc8d-026d-4b5c-970e-611c4725be79",
+        "41a31c74-6b65-41ce-8012-d0ff91fb90e1",
+        "babd850d-1c33-4739-88d4-0fd314cddfe3",
+        "963cc089-085e-4d73-a431-404ad59dce00",
+        "f892d1ba-a481-4735-aafa-0c51f4e4b36d",
+        "34b44ce0-9ae9-45b3-ad36-5a00070bba66",
+        "ae510c21-b864-4395-a1fe-908e89cd3bf0",
+        "6161859b-3380-48e9-8300-f582feac0a57",
+        "2d7b6552-5255-4aa3-8bb2-2cd2c252f6b5",
+        "5f9275be-1f33-4c2b-a05e-89eeff6bf8f3",
+        "2cd1ac01-55b6-47fe-b1ef-462c0e5b32dc",
+        "09b1468b-13ea-4d31-a3f5-8abaa83eae31",
+        "1fb5554e-d8c0-43a7-bced-0d756908b8e5",
+        "1a0de5b8-0775-4a5a-842f-45568e0a1a11",
+        "330fac49-8236-4186-a8ca-9f14ae9306de",
+        "e82391c1-9bfc-4040-aa63-ca370304c4aa",
+        "78e877b5-adcb-4da7-adb2-c4ffc1136388",
+        "5acd29e2-aef4-4974-9f80-e8781c64c556",
+        "c4413fb6-c1fc-4d34-8915-f11a04096b63",
+        "b8609936-e9df-4bc0-9902-589b3274a6ed",
+        "92b1d047-c377-4c34-ad40-017d96659e8e",
+        "8c886d2d-2119-4ced-83fe-6a53feddc2b8",
+        "6b8cd3ab-eaa9-430d-ab37-ecd654ee88bf",
+        "b4852c5b-b980-4940-a8af-da53f8653b3e",
+        "58f3aa36-67ce-44ec-a65f-13710128924e",
+        "14d44108-6857-4023-a63f-5d26db8d1736",
+        "f59202e0-9513-45f6-8147-8d334c1905b2",
+        "b230757d-0bc3-424e-a2ba-747dfc30414d",
+        "2f4d0482-8408-4179-bf7c-19001e5a23a5",
+        "f9e9b40e-b71d-481a-8cb9-b702d560cb0d",
+        "41918ad1-40ef-442e-88aa-163e09e76d97",
+        "1c94927d-1d84-47ec-92f6-781e6980f534",
+        "59018de7-d23c-4874-909b-e67ef5994e03",
+        "182eaa5d-4b8f-4c4d-bfc3-c4126430a1a1",
+        "c975cfdf-6a3d-4455-8f73-5ab19c5f11f3",
+        "9c381a4c-0bac-470e-ad4d-b8c50b06ad64",
+        "880c6608-d109-4404-bbe4-79f24ee00652",
+        "2cdf6391-80bd-4ed9-8696-3a19d2196268",
+        "b28b9888-a556-4e12-a7a3-75d9e1319794",
+        "3e3f213d-5d76-4140-9b84-73c193fb52c4",
+        "14ff91d1-1010-48cb-81c4-e7cfcf8ebd97",
+        "de1f24c8-f7e5-4243-b70e-2d6dc4b26474",
+        "ac2c144b-5871-4253-a1d7-de0b13675866",
+        "8e1f4d79-8f2e-4c21-8053-ce239ff10307",
+        "145e58ac-e69a-4e54-be46-acc0c7cc26b6",
+        "dc874a9f-df70-45bf-a702-c1203fa86aa1",
+        "524415f2-7d15-4e7a-a947-98d76837e699",
+        "e2efdd23-d5aa-4810-81b4-2c377152d716"
+      ]
+    }
+  }
+}

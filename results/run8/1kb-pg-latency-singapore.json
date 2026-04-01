@@ -1,0 +1,112 @@
+{
+  "metadata": {
+    "size": "1kb",
+    "pattern": "pg",
+    "suite": "latency",
+    "region": "singapore"
+  },
+  "data": {
+    "test": "latency",
+    "pattern": "pg",
+    "region": "singapore",
+    "workerUrl": "https://pg-cfworker.ZZZZZZZZZZZZZ.workers.dev",
+    "iterations": 200,
+    "successPct": 100,
+    "dropped": 0,
+    "latencies": {
+      "min": 251.138373,
+      "p50": 269.1993885,
+      "p95": 366.32505899999995,
+      "p99": 379.94597876999995,
+      "max": 383.610933,
+      "count": 200
+    },
+    "warmup": {
+      "ttfb_ms": {
+        "min": 355.301904,
+        "p50": 355.301904,
+        "p99": 355.301904,
+        "max": 355.301904,
+        "count": 1
+      },
+      "success_rate": 1
+    },
+    "connection_metrics": {
+      "peak_connections": 1,
+      "idle_after_run": 0
+    },
+    "colo_distribution": {
+      "SIN": 200
+    },
+    "placement_colo_distribution": {
+      "FRA": 200
+    },
+    "isolate_tracking": {
+      "isolate_count": 62,
+      "isolate_ids": [
+        "ccc7e080-c85a-4002-87a6-bce6217d325e",
+        "5306371f-3cf9-4284-9ae9-561afccecece",
+        "33c9256e-b808-4c8a-8d38-67703b7e5969",
+        "7d801050-4941-4916-b6f5-9860222c659e",
+        "a7efabc1-c695-41b6-a12a-aa3ead1cadc6",
+        "9311667c-24d8-4e2f-a8eb-a489c998cfe6",
+        "89d42e68-8a4d-40a4-9060-de528e109187",
+        "89cc7a9a-8742-4e54-9e16-ba87bc054cab",
+        "d4a394d2-e0b8-45db-96f8-307f26379ceb",
+        "821a08f1-d10d-4af7-b57a-53459c976add",
+        "2d092a92-7b10-491b-b33f-f1b57be727d4",
+        "d885c675-91d2-4f3c-8b26-dfebde011d96",
+        "2553d129-059f-47f7-b93a-5bbda9a747d9",
+        "6b3b8e5f-3099-470b-921b-8e0bf0807675",
+        "1199221e-a481-4435-9917-984066f280fd",
+        "1ef9a29b-e8dc-4d09-a4a0-43bf732e949c",
+        "b63cc935-af60-4843-9822-8b312ae20bae",
+        "ed6d445a-2e32-40a0-8136-52cb49fc075b",
+        "0886115b-df9f-4e22-8202-726158cb2cd1",
+        "9cc0aaed-818c-4140-9b8c-5fe5cf246e9f",
+        "ecd028b6-1cba-4b7b-b78d-44161ae3757b",
+        "abc37b98-a61a-451e-946b-eb4d89d3ad77",
+        "f53122dd-e00f-4cf6-b595-d10ab3a4ec26",
+        "573137a5-a207-4ded-b2fc-262cfe2fec4f",
+        "6aa8e059-c56d-4e4a-a848-4b0b16701e49",
+        "b7da08db-8a1f-4162-823c-76d24a2c10d4",
+        "9386d305-92e0-4a17-8a2e-a1964349a669",
+        "14a51b67-0e51-4dbc-8aa3-2fb304bb8cbf",
+        "6f065e4d-68b8-4817-8574-dd669e17c68c",
+        "5d07b612-d8b0-4fbf-bb2d-58d0a686c015",
+        "47a18ff2-3f5a-41b3-9862-e2e0cf3509d8",
+        "60a86d2c-73c2-4956-8a34-a05d58882044",
+        "367e6838-00d9-47cf-9370-8f4044bd3ff0",
+        "24e0d58c-e572-4fab-af00-f76806336404",
+        "2bcfde0b-4d82-4f48-894e-ac4577b0910a",
+        "d34e4881-757a-4611-848a-76e9f43aea7e",
+        "770a1e0a-b076-4afc-9a40-740ba7870cd6",
+        "3e07955a-3087-4eb7-9a5a-978ce11b8905",
+        "ab8a6164-a0ca-4dca-b2f1-567b9df8935c",
+        "970bd831-07ca-4baa-bdc7-bbafed4f00a0",
+        "d72d20f3-a8fa-409d-86ac-b2652930da98",
+        "a6fca0a8-dafa-4452-a68f-fafb3e6d613c",
+        "d0e734f0-cfd4-4f92-ad27-e7b49c9ac1a0",
+        "ea54ff30-c6ab-4639-89f6-2cbcfc7d6df3",
+        "ec87b461-8af5-466e-b55b-40267757a298",
+        "ec262bf9-91e9-4433-987c-f29557792b9e",
+        "e079e982-9ecb-468a-b477-e4a5ec2bee32",
+        "7ba0af2b-a734-4b96-999b-065787fb4263",
+        "1a8909de-36f9-4fcc-87e9-a62ea0f7116a",
+        "f22d78d3-b7f0-423a-9c04-d32e8d38ffad",
+        "bbdd8a18-892d-46a6-b2d9-0915ad3054a9",
+        "085560eb-1ab5-443b-a874-57a7525888ad",
+        "bd36a38c-e20e-480a-9dea-6aa76956acf7",
+        "354d2302-b51b-4971-89a0-d7f03271e634",
+        "8c72b2c6-8854-4812-8e7a-7784cd060e2b",
+        "032d4887-a50c-4e5b-9de5-7960a66c378c",
+        "9052c750-de41-4ba8-81ba-0969cd0f3493",
+        "995beee2-7f9d-4b94-adf9-ff31e8bf7d71",
+        "44c0a702-4a09-4749-867d-0824650cb582",
+        "b2a82c5e-d661-44bc-ba16-65739b185b3d",
+        "9cb9b7c5-468b-436b-ab16-fc1580901dbe",
+        "1121549d-c4fa-494b-b888-01f3035b5e47"
+      ]
+    }
+  }
+}

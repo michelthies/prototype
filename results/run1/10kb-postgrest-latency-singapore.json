@@ -1,0 +1,71 @@
+{
+  "metadata": {
+    "size": "10kb",
+    "pattern": "postgrest",
+    "suite": "latency",
+    "region": "singapore"
+  },
+  "data": {
+    "test": "latency",
+    "pattern": "postgrest",
+    "region": "singapore",
+    "workerUrl": "https://postgrest-cfworker.ZZZZZZZZZZZZZ.workers.dev",
+    "iterations": 200,
+    "successPct": 100,
+    "dropped": 0,
+    "latencies": {
+      "min": 182.616258,
+      "p50": 192.3614085,
+      "p95": 348.6619207,
+      "p99": 389.10237032999987,
+      "max": 539.422357,
+      "count": 200
+    },
+    "warmup": {
+      "ttfb_ms": {
+        "min": 342.64483,
+        "p50": 342.64483,
+        "p99": 342.64483,
+        "max": 342.64483,
+        "count": 1
+      },
+      "success_rate": 1
+    },
+    "connection_metrics": {
+      "peak_connections": 2,
+      "idle_after_run": 2
+    },
+    "colo_distribution": {
+      "SIN": 200
+    },
+    "placement_colo_distribution": {
+      "FRA": 200
+    },
+    "isolate_tracking": {
+      "isolate_count": 21,
+      "isolate_ids": [
+        "b00fd321-e5c2-40e4-9c16-408f9e2c024e",
+        "5c0f5292-df0f-48bf-9c87-be2e03e13bb0",
+        "8ea9d94c-64dc-4132-9266-a2b9ecb0fe19",
+        "1106f7c0-cfbf-4e1a-b8bf-3156085b1884",
+        "a0deffcb-c515-44e4-ae2e-4c349cbcec91",
+        "5ad47030-756a-4d8f-882d-544abb0fcb3e",
+        "d48d9c83-510e-4b33-b065-036d73d0d8f8",
+        "e4c94b24-5423-4023-8f27-bdcb8b060ab2",
+        "87b3fc6d-8208-492a-99f3-a1a90a964f7d",
+        "f21df208-1c3b-45a7-b3f4-8d889e293141",
+        "f79fe973-2bab-4568-b998-534b90ac5126",
+        "d4723d36-a5d7-4240-8e2a-628a8f7eb2ae",
+        "7f460baf-f985-48a3-990a-836f9457a64d",
+        "b3ee2c8e-4054-4aa0-9eed-78bf1d64cb73",
+        "d7cc585b-e8d1-4ace-a626-5212cce01444",
+        "c0bd07cc-c39d-411e-864c-dcbd40289688",
+        "10b4d5d0-fd6a-4eb4-ac6e-345045c3c72e",
+        "6e3b52c0-a6bd-4d8b-8ca2-e0bd9a349226",
+        "b20d46be-9560-4f52-bfcd-c15353950ab2",
+        "439813b2-a2a6-4ed2-8703-4da61c6f83dc",
+        "0bb33c24-1a1d-4458-8828-a4655317da73"
+      ]
+    }
+  }
+}

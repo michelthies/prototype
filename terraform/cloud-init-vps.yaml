@@ -1,0 +1,11 @@
+package_update: true
+packages:
+  - ca-certificates
+  - curl
+  - netcat-openbsd
+  - openssl
+runcmd:
+  - curl -fsSL https://get.docker.com | sh
+  - systemctl enable --now docker
+  - sed -i 's/^#\?PasswordAuthentication.*/PasswordAuthentication no/' /etc/ssh/sshd_config
+  - systemctl reload sshd

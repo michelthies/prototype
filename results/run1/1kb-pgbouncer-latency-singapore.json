@@ -1,0 +1,70 @@
+{
+  "metadata": {
+    "size": "1kb",
+    "pattern": "pgbouncer",
+    "suite": "latency",
+    "region": "singapore"
+  },
+  "data": {
+    "test": "latency",
+    "pattern": "pgbouncer",
+    "region": "singapore",
+    "workerUrl": "https://pgbouncer-cfworker.ZZZZZZZZZZZZZ.workers.dev",
+    "iterations": 200,
+    "successPct": 100,
+    "dropped": 0,
+    "latencies": {
+      "min": 240.529075,
+      "p50": 251.3832855,
+      "p95": 403.9599113499999,
+      "p99": 487.03828443999845,
+      "max": 978.016164,
+      "count": 200
+    },
+    "warmup": {
+      "ttfb_ms": {
+        "min": 407.426681,
+        "p50": 407.426681,
+        "p99": 407.426681,
+        "max": 407.426681,
+        "count": 1
+      },
+      "success_rate": 1
+    },
+    "connection_metrics": {
+      "peak_connections": 1,
+      "idle_after_run": 1
+    },
+    "colo_distribution": {
+      "SIN": 200
+    },
+    "placement_colo_distribution": {
+      "FRA": 200
+    },
+    "isolate_tracking": {
+      "isolate_count": 20,
+      "isolate_ids": [
+        "d92896fe-ff74-4e0c-8506-45dcbc70f7a1",
+        "6e0ca1a5-ff78-4a38-acdd-d3d6e90ff1e2",
+        "28b75e48-f613-4c9d-8be8-3b85379a83f3",
+        "06f2e887-ca48-48f6-a4c9-991b2a10a721",
+        "6ae48bae-7fed-4dbd-9a51-ac73e1763b1b",
+        "366a3e1a-91d1-4784-9781-70dae5be7337",
+        "11ddf451-231e-4bc0-b2f5-827351c704f9",
+        "1349c764-bf10-48a2-aa23-934fa8a9fed6",
+        "d825ef34-d2e0-4894-b5f0-f366f8c68f29",
+        "ca2782be-4539-48fd-a123-3a51480a5e15",
+        "7867f007-f916-402c-8b28-70c18cae2771",
+        "c902699d-d75b-4c23-a108-dae917c04dec",
+        "b037dae1-5d29-4252-90a5-5fad80e6aeae",
+        "58b00675-ef06-458b-9e5d-91904ded3fa8",
+        "4e0b6db1-cf7c-43d8-a703-4a39595de715",
+        "3ad75a52-8f7d-4b49-a196-abdf45d85e45",
+        "44f4f567-fc0d-4638-9f6e-ed40b81570d8",
+        "fa84ad8d-59d9-4302-b188-ad7194e30e5b",
+        "8fdb7804-94bb-4093-81fa-32a4fcbd82af",
+        "f32156ee-ecac-4f24-ace7-f2b056bfd64c"
+      ]
+    }
+  }
+}

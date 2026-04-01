@@ -1,0 +1,112 @@
+{
+  "metadata": {
+    "size": "10kb",
+    "pattern": "pgbouncer",
+    "suite": "latency",
+    "region": "singapore"
+  },
+  "data": {
+    "test": "latency",
+    "pattern": "pgbouncer",
+    "region": "singapore",
+    "workerUrl": "https://pgbouncer-cfworker.ZZZZZZZZZZZZZ.workers.dev",
+    "iterations": 200,
+    "successPct": 100,
+    "dropped": 0,
+    "latencies": {
+      "min": 199.630828,
+      "p50": 207.39974,
+      "p95": 306.927223,
+      "p99": 317.0173718199999,
+      "max": 380.403226,
+      "count": 200
+    },
+    "warmup": {
+      "ttfb_ms": {
+        "min": 344.02005,
+        "p50": 344.02005,
+        "p99": 344.02005,
+        "max": 344.02005,
+        "count": 1
+      },
+      "success_rate": 1
+    },
+    "connection_metrics": {
+      "peak_connections": 1,
+      "idle_after_run": 1
+    },
+    "colo_distribution": {
+      "SIN": 200
+    },
+    "placement_colo_distribution": {
+      "FRA": 200
+    },
+    "isolate_tracking": {
+      "isolate_count": 62,
+      "isolate_ids": [
+        "bd3259c3-2add-4411-96b5-d149c178820e",
+        "c6603062-40d4-4119-a17a-5f33a43e63e7",
+        "5b42d342-d818-4b27-bcf8-408427950f7f",
+        "ec1f6fba-ef15-4b33-bdd3-fda359fa4211",
+        "52768ec6-4845-4a7e-a0d5-5883dc423f1a",
+        "dc9cc460-8d02-4d46-a55d-53b8e3841c78",
+        "89496880-e37b-47f0-ab55-f7d1e78ca684",
+        "46e3b8cb-2f63-4fee-965a-1c41527ec8c8",
+        "629b2678-b698-4c62-8d11-d105bfab017b",
+        "ff279c33-ecbf-446e-9126-b5924993fcbb",
+        "64d7f5f2-2060-41ab-b624-72e989b79948",
+        "163bd3bf-8b73-43dd-9d31-b117e5771be4",
+        "1af2aac0-d2ec-4490-aa9e-f8037c113a7e",
+        "458eeb9f-807b-4945-9a2e-debcabec3786",
+        "e397e2cf-cbdb-4886-a101-a1f09d6a88be",
+        "464f73d8-d78b-431f-b611-af2d33737915",
+        "0a24a899-884c-4b19-a23f-12196fb97129",
+        "67e8ccbb-5d69-4cf1-96a0-dea08441f9ae",
+        "5fc0ab52-210b-4cae-a427-16c672fcc3e0",
+        "3d46fcfa-ea54-454b-9dce-b55d3d1a9a9e",
+        "3368de41-b6ed-45ff-b35a-5bcbf2e1fd4d",
+        "227d606e-ff01-46a4-8e8a-1f3eb16f2cc4",
+        "44ebddce-f3de-4cbb-a200-f19c5754355b",
+        "65d1cedf-323c-4f7f-83a1-434aa578c0e0",
+        "08896cd6-748d-44f6-9154-244ab1cb0506",
+        "6abd8250-df36-4441-8bc1-d273aaf0e1b8",
+        "43c8b6bd-6f2a-4e78-baa4-63f6d46b2a6d",
+        "e74b673a-d6ae-4ba1-b821-1b2373af83df",
+        "a5aaed9f-5824-44c8-9590-40afe8a051cb",
+        "c3453432-2755-4c4b-ae4c-e2541aa3fd9f",
+        "1431d6ab-65f4-4a70-b579-8c5a8494378c",
+        "e0bda739-89a0-44c0-aeb8-eba3034f78e3",
+        "8610f3a0-72fd-4fb3-b0ba-f886b6514544",
+        "3b8e4518-3685-42bd-b10b-7d6637902d41",
+        "ab8baa52-4ef1-4288-b4b7-ffa75f7ca027",
+        "94472612-a226-4283-8723-193819465ef5",
+        "702f0767-69b0-4396-95fd-faee5f5eb528",
+        "ea773aef-8783-4147-adba-4cc8a2b5f718",
+        "8e0cfe28-93cd-45d1-bda9-1557f8673344",
+        "f31242b8-c0a1-47df-beb4-2b71c10ed355",
+        "5c65d6be-3d6a-41e6-a7b5-e2fb4ba01308",
+        "c90dd19f-a592-46c0-8e30-ac20633cd268",
+        "889d64e3-9f57-4aa9-97ea-a9f2d14cff88",
+        "702cf2ee-83b0-4637-8bb0-9ecd0698993e",
+        "2e7ca575-15fc-4e5b-8e70-37ae29f1b43e",
+        "ac2176d8-05aa-4497-8d4a-7ac9a212793e",
+        "980b1bd3-3ca7-4ed3-9dd4-b53a88ec54f6",
+        "a7011b17-2289-4c9e-80fc-6130c0ab1431",
+        "0a88ffec-8cee-4937-964e-0fe757719627",
+        "43d06f4a-fb46-4e06-8c80-9ae5229a5311",
+        "97ef082a-d33a-4407-9609-02ac381a46e4",
+        "c6af8f48-ec74-4183-be0a-09e5bffbcb40",
+        "4ecce4d4-1218-4980-8c7c-fa4c6c091a41",
+        "48fd77a4-6a18-4bf8-98d0-8d860d648368",
+        "ad81a0ed-8677-4df8-9c41-48caffe93bf0",
+        "526ed6c7-ec82-4686-91db-c37f5fdffb74",
+        "61b5bf97-b463-46e6-a496-a34a6697fb54",
+        "1e52c2b4-d5f4-4d23-91ae-5276563b298d",
+        "0ac96e1f-4fab-4c9f-b223-cad86be35e4b",
+        "63b300e3-6dc9-48bb-9090-f8941f3e1936",
+        "434e64cf-f523-498d-8a52-6420215fe581",
+        "30504aa7-455f-4c67-90fc-68af075df63b"
+      ]
+    }
+  }
+}
