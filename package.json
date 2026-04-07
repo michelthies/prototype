@@ -4,7 +4,7 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev:worker": "pnpm --filter worker dev",
+    "dev:workers": "pnpm --filter worker dev:all",
     "dev:node": "pnpm --filter node dev",
     "infra:up": "cd terraform && terraform init && terraform apply -auto-approve",
     "infra:down": "cd terraform && terraform destroy -auto-approve",
@@ -15,7 +15,8 @@
     "deploy:workers": "pnpm --filter worker run deploy:all",
     "delete:workers": "pnpm --filter worker run delete:all",
     "db:seed": "tsx db/seed.ts",
-    "test:remote": "tsx scripts/test.ts"
+    "test:remote": "tsx scripts/test.ts",
+    "test:local": "tsx scripts/test.ts --local"
   },
   "devDependencies": {
     "@types/bcryptjs": "catalog:",
@@ -23,6 +24,7 @@
     "@types/pg": "catalog:",
     "bcryptjs": "catalog:",
     "pg": "catalog:",
-    "tsx": "catalog:"
+    "tsx": "catalog:",
+    "dotenv": "^17.4.0"
   }
 }

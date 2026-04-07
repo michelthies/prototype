@@ -45,12 +45,12 @@ grant usage on schema public to postgrest_anon;
 
 create role agency_group;
 
-create role agency_pg         login password 'XXXXXXXXXXXXXXXXXXXXXXX' connection limit 20 in role agency_group;
-create role "agency_pg-pool"    login password 'XXXXXXXXXXXXXXXXXXXXXXX' connection limit 20 in role agency_group;
-create role agency_pgbouncer  login password 'XXXXXXXXXXXXXXXXXXXXXXX' connection limit 20 in role agency_group;
-create role agency_postgrest  login password 'XXXXXXXXXXXXXXXXXXXXXXX' connection limit 22 in role agency_group;
-create role agency_hyperdrive login password 'XXXXXXXXXXXXXXXXXXXXXXX' connection limit 20 in role agency_group;
-create role agency_node       login password 'XXXXXXXXXXXXXXXXXXXXXXX' connection limit 20 in role agency_group;
+create role agency_pg         login password 'XXXXXXXXXX' connection limit 20 in role agency_group;
+create role "agency_pg-pool"    login password 'XXXXXXXXXX' connection limit 20 in role agency_group;
+create role agency_pgbouncer  login password 'XXXXXXXXXX' connection limit 20 in role agency_group;
+create role agency_postgrest  login password 'XXXXXXXXXX' connection limit 22 in role agency_group;
+create role agency_hyperdrive login password 'XXXXXXXXXX' connection limit 20 in role agency_group;
+create role agency_node       login password 'XXXXXXXXXX' connection limit 20 in role agency_group;
 
 grant select, insert, update, delete on users to agency_group;
 grant select, insert, update, delete on events to agency_group;

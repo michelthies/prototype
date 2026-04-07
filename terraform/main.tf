@@ -10,7 +10,7 @@ provider "hcloud" { token = var.hcloud_token }
 provider "digitalocean" { token = var.digitalocean_token }
 
 locals {
-  ssh_public_key = "RRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR name-here"
+  ssh_public_key = var.ssh_public_key
 }
 
 resource "hcloud_ssh_key" "default" {

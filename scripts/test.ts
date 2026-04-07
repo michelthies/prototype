@@ -1,38 +1,61 @@
+import "dotenv/config";
 import { spawn, execFileSync, type ChildProcess } from "node:child_process";
 import { resolve as resolvePath } from "node:path";
 import { writeFileSync, mkdirSync, readFileSync, readdirSync } from "node:fs";
 import { Client } from "pg";
 
-const ips = JSON.parse(readFileSync("ips.json", "utf8"));
+const isLocal = process.argv.includes("--local");
 
-const vpsIp: string = ips["nuernberg-vps"];
+let ips: Record<string, string> = {};
+try {
+  ips = JSON.parse(readFileSync("ips.json", "utf8"));
+} catch {}
 
-const targetUrls: Record<string, string> = {
-  pg: "https://pg-cfworker.ZZZZZZZZZZZZZ.workers.dev",
-  "pg-pool": "https://pg-pool-cfworker.ZZZZZZZZZZZZZ.workers.dev",
-  pgbouncer: "https://pgbouncer-cfworker.ZZZZZZZZZZZZZ.workers.dev",
-  postgrest: "https://postgrest-cfworker.ZZZZZZZZZZZZZ.workers.dev",
-  hyperdrive: "https://hyperdrive-cfworker.ZZZZZZZZZZZZZ.workers.dev",
-  "pg-pop": "https://pg-cfworker-pop.ZZZZZZZZZZZZZ.workers.dev",
-  "pg-pool-pop": "https://pg-pool-cfworker-pop.ZZZZZZZZZZZZZ.workers.dev",
-  "pgbouncer-pop": "https://pgbouncer-cfworker-pop.ZZZZZZZZZZZZZ.workers.dev",
-  "postgrest-pop": "https://postgrest-cfworker-pop.ZZZZZZZZZZZZZ.workers.dev",
-  "hyperdrive-pop": "https://hyperdrive-cfworker-pop.ZZZZZZZZZZZZZ.workers.dev",
-  node: `https://static.WWWWWWclients.your-server.de:3001`,
-};
+const vpsIp: string = isLocal ? "127.0.0.1" : ips["nuernberg-vps"];
 
-const dropletIps: Record<string, string> = {
-  london: ips["london-droplet"],
-  "new-york": ips["new-york-droplet"],
-  singapore: ips["singapore-droplet"],
-};
+let targetUrls: Record<string, string>;
+if (isLocal) {
+  targetUrls = {
+    pg: "http://localhost:8787",
+    "pg-pool": "http://localhost:8788",
+    pgbouncer: "http://localhost:8789",
+    postgrest: "http://localhost:8790",
+    hyperdrive: "http://localhost:8791",
+    node: "http://localhost:3001",
+  };
+} else {
+  targetUrls = {
+    pg: `https://pg-cfworker.${process.env.WORKER_SUBDOMAIN}`,
+    "pg-pool": `https://pg-pool-cfworker.${process.env.WORKER_SUBDOMAIN}`,
+    pgbouncer: `https://pgbouncer-cfworker.${process.env.WORKER_SUBDOMAIN}`,
+    postgrest: `https://postgrest-cfworker.${process.env.WORKER_SUBDOMAIN}`,
+    hyperdrive: `https://hyperdrive-cfworker.${process.env.WORKER_SUBDOMAIN}`,
+    "pg-pop": `https://pg-cfworker-pop.${process.env.WORKER_SUBDOMAIN}`,
+    "pg-pool-pop": `https://pg-pool-cfworker-pop.${process.env.WORKER_SUBDOMAIN}`,
+    "pgbouncer-pop": `https://pgbouncer-cfworker-pop.${process.env.WORKER_SUBDOMAIN}`,
+    "postgrest-pop": `https://postgrest-cfworker-pop.${process.env.WORKER_SUBDOMAIN}`,
+    "hyperdrive-pop": `https://hyperdrive-cfworker-pop.${process.env.WORKER_SUBDOMAIN}`,
+    node: `https://${process.env.VPS_DOMAIN}:3001`,
+  };
+}
+
+let dropletIps: Record<string, string>;
+if (isLocal) {
+  dropletIps = { local: "127.0.0.1" };
+} else {
+  dropletIps = {
+    london: ips["london-droplet"],
+    "new-york": ips["new-york-droplet"],
+    singapore: ips["singapore-droplet"],
+  };
+}
 
 const processHome = process.env.HOME;
 if (!processHome) throw new Error("HOME not set");
 
 const sshArgs = [
   "-i",
-  resolvePath(processHome, ".ssh/hetzner_prototypes"),
+  resolvePath(processHome, ".ssh/SSSSSSSSSS"),
   "-o",
   "StrictHostKeyChecking=no",
   "-o",
@@ -54,14 +77,26 @@ function execSsh(
   command: string,
   opts: { input?: string } = {},
 ): string {
-  return execFileSync("ssh", [...sshArgs, `root@${ip}`, command], {
-    encoding: "utf8",
-    ...opts,
-  }).trim();
+  if (isLocal) {
+    return execFileSync("bash", ["-c", command], {
+      encoding: "utf8",
+      ...opts,
+    }).trim();
+  } else {
+    return execFileSync("ssh", [...sshArgs, `root@${ip}`, command], {
+      encoding: "utf8",
+      ...opts,
+    }).trim();
+  }
 }
 
-const sshRead = (ip: string, filePath: string) =>
-  execSsh(ip, `cat ${filePath}`);
+function sshRead(ip: string, filePath: string): string {
+  if (isLocal) {
+    return readFileSync(filePath, "utf8");
+  } else {
+    return execSsh(ip, `cat ${filePath}`);
+  }
+}
 
 const execRemoteSql = (sql: string) =>
   execSsh(
@@ -172,36 +207,52 @@ async function fullReset(pattern: string): Promise<void> {
   let deployPromise: Promise<void> = Promise.resolve();
 
   if (pattern !== "node") {
-    deployPromise = (async () => {
-      for (let attempt = 1; attempt <= 3; attempt++) {
-        try {
-          await new Promise<void>((resolve, reject) => {
-            const proc = spawn(
-              "pnpm",
-              ["--filter", "worker", "run", `deploy:${pattern}`],
-              { stdio: "pipe" },
-            );
-            let stderr = "";
-            proc.stderr?.on("data", (c: Buffer) => (stderr += c.toString()));
-            proc.on("exit", (code) =>
-              code === 0
-                ? resolve()
-                : reject(new Error(`exit ${code}\n${stderr}`)),
-            );
-          });
-          return;
-        } catch {
-          await sleep(5000);
+    if (isLocal) {
+      deployPromise = (async () => {
+        console.log(`restarting worker: ${pattern}`);
+        execSsh("127.0.0.1", `pkill -f "dev:${pattern}" || true`);
+        spawn("pnpm", ["--filter", "worker", "run", `dev:${pattern}`], {
+          stdio: "ignore",
+          detached: true,
+        }).unref();
+        await sleep(2000);
+      })();
+    } else {
+      deployPromise = (async () => {
+        for (let attempt = 1; attempt <= 3; attempt++) {
+          try {
+            console.log(`deploying worker: ${pattern}`);
+            await new Promise<void>((resolve, reject) => {
+              const proc = spawn(
+                "pnpm",
+                ["--filter", "worker", "run", `deploy:${pattern}`],
+                { stdio: "pipe" },
+              );
+              let stderr = "";
+              proc.stderr?.on("data", (c: Buffer) => (stderr += c.toString()));
+              proc.on("exit", (code) =>
+                code === 0
+                  ? resolve()
+                  : reject(new Error(`exit ${code}\n${stderr}`)),
+              );
+            });
+            return;
+          } catch {
+            await sleep(5000);
+          }
         }
-      }
-    })();
+      })();
+    }
   }
 
+  console.log(`stop services`);
   execSsh(vpsIp, "docker stop node postgrest pgbouncer || true");
   execSsh(
     vpsIp,
     "truncate -s 0 $(docker inspect --format='{{.LogPath}}' psql-db pgbouncer postgrest node 2>/dev/null) || true",
   );
+
+  console.log(`restart db`);
   execSsh(vpsIp, "docker restart psql-db");
   execSsh(
     vpsIp,
@@ -211,6 +262,7 @@ async function fullReset(pattern: string): Promise<void> {
   execRemoteSql("SELECT pg_stat_statements_reset();");
   execRemoteSql("TRUNCATE TABLE events RESTART IDENTITY;");
 
+  console.log(`start services`);
   execSsh(vpsIp, "docker start pgbouncer postgrest node");
   execSsh(
     vpsIp,
@@ -224,6 +276,12 @@ async function fullReset(pattern: string): Promise<void> {
     vpsIp,
     `for i in $(seq 1 30); do docker logs node 2>&1 | grep -q "Server running" && exit 0 || true; sleep 1; done; exit 1`,
   );
+
+  if (isLocal) {
+    await sleep(3000);
+  }
+
+  console.log(`reset done`);
 
   await deployPromise;
 }
@@ -239,17 +297,22 @@ async function runRemote(
   const ip = dropletIps[region];
   const summaryFile = `/tmp/k6-summary-${suite}.json`;
 
-  const tunnel = spawn("ssh", [
-    ...sshArgs,
-    "-N",
-    "-L",
-    "15432:127.0.0.1:5432",
-    `root@${vpsIp}`,
-  ]);
-  await sleep(1500);
+  let tunnel: ChildProcess | undefined;
+  if (!isLocal) {
+    tunnel = spawn("ssh", [
+      ...sshArgs,
+      "-N",
+      "-L",
+      "15432:127.0.0.1:5432",
+      `root@${vpsIp}`,
+    ]);
+    await sleep(1500);
+  }
 
   const pgClient = new Client({
-    connectionString: `postgresql://postgres:XXXXXXXXXXXXXXXXXXXXXXX@127.0.0.1:15432/tenant_db`,
+    connectionString: isLocal
+      ? `postgresql://postgres:${process.env.DB_PASSWORD}@127.0.0.1:5432/tenant_db`
+      : `postgresql://postgres:${process.env.DB_PASSWORD}@127.0.0.1:15432/tenant_db`,
   });
   await pgClient.connect();
 
@@ -266,20 +329,41 @@ async function runRemote(
     } catch {}
   }, 200);
 
-  const remoteCmd =
-    `k6 run --quiet --address=localhost:0` +
-    ` --env SUMMARY_FILE=${summaryFile}` +
-    ` --env BASE_URL=${targetUrls[pattern]}` +
-    ` --env REGION=${region}` +
-    ` --env PATTERN=${pattern}` +
-    ` --env PAYLOAD_SIZE=${size}` +
-    ` --env AGENCY=agency1` +
-    ` --env AUTH_TOKENS=${JSON.stringify(JSON.stringify(authTokens))}` +
-    ` /opt/geo-runner/${suite}.js 2>&1`;
-
-  const proc = spawn("ssh", [...sshArgs, `root@${ip}`, remoteCmd], {
-    stdio: ["inherit", "pipe", "inherit"],
-  }) as ChildProcess;
+  let remoteCmd: string;
+  if (isLocal) {
+    remoteCmd =
+      `k6 run --quiet --address=localhost:0` +
+      ` --env SUMMARY_FILE=${summaryFile}` +
+      ` --env BASE_URL=${targetUrls[pattern]}` +
+      ` --env REGION=${region}` +
+      ` --env PATTERN=${pattern}` +
+      ` --env PAYLOAD_SIZE=${size}` +
+      ` --env AGENCY=agency1` +
+      ` --env AUTH_TOKENS=${JSON.stringify(JSON.stringify(authTokens))}` +
+      ` scripts/k6/${suite}.js 2>&1`;
+  } else {
+    remoteCmd =
+      `k6 run --quiet --address=localhost:0` +
+      ` --env SUMMARY_FILE=${summaryFile}` +
+      ` --env BASE_URL=${targetUrls[pattern]}` +
+      ` --env REGION=${region}` +
+      ` --env PATTERN=${pattern}` +
+      ` --env PAYLOAD_SIZE=${size}` +
+      ` --env AGENCY=agency1` +
+      ` --env AUTH_TOKENS=${JSON.stringify(JSON.stringify(authTokens))}` +
+      ` /opt/geo-runner/${suite}.js 2>&1`;
+  }
+  console.log(`run k6 for ${size}-${pattern}-${suite}-${region}`);
+  let proc: ChildProcess;
+  if (isLocal) {
+    proc = spawn("bash", ["-c", remoteCmd], {
+      stdio: ["inherit", "pipe", "inherit"],
+    });
+  } else {
+    proc = spawn("ssh", [...sshArgs, `root@${ip}`, remoteCmd], {
+      stdio: ["inherit", "pipe", "inherit"],
+    });
+  }
 
   let k6Logs = "";
   proc.stdout?.on("data", (chunk: Buffer) => {
@@ -305,7 +389,10 @@ async function runRemote(
   const idleAfterRun = parseInt(idleRes.rows[0].count, 10) || 0;
 
   await pgClient.end();
-  tunnel.kill();
+
+  if (tunnel) {
+    tunnel.kill();
+  }
 
   const summary = JSON.parse(sshRead(ip, summaryFile));
 
@@ -349,10 +436,10 @@ async function main(): Promise<void> {
   for (let iteration = 1; iteration <= iterations; iteration++) {
     const runs: Run[] = [];
 
-    const payloads = ["1kb", "10kb"];
+     const payloads = ["1kb", "10kb"];
     const suitesA = ["concurrency", "burst"];
     const suitesB = ["latency", "throughput"];
-    const regions = ["london", "new-york", "singapore"];
+    const regions = isLocal ? ["local"] : ["london", "new-york", "singapore"];
     const patternsA = ["pg", "pg-pool"];
     const patternsB = ["pg", "pgbouncer", "postgrest", "hyperdrive", "node"];
     const popPatternsB = [
@@ -362,11 +449,13 @@ async function main(): Promise<void> {
       "hyperdrive-pop",
     ];
 
+    const regionA = isLocal ? "local" : "london";
     for (const suite of suitesA) {
       for (const pattern of patternsA) {
-        runs.push({ size: "1kb", suite, region: "london", pattern });
+        runs.push({ size: "1kb", suite, region: regionA, pattern });
       }
     }
+
     for (const size of payloads) {
       for (const suite of suitesB) {
         for (const region of regions) {
@@ -377,10 +466,12 @@ async function main(): Promise<void> {
       }
     }
 
-    for (const suite of suitesB) {
-      for (const region of regions) {
-        for (const pattern of popPatternsB) {
-          runs.push({ size: "1kb", suite, region, pattern });
+    if (!isLocal) {
+      for (const suite of suitesB) {
+        for (const region of regions) {
+          for (const pattern of popPatternsB) {
+            runs.push({ size: "1kb", suite, region, pattern });
+          }
         }
       }
     }

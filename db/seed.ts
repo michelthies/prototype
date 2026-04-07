@@ -4,7 +4,7 @@ import bcrypt from "bcryptjs";
 const client = new Client({
   connectionString:
     process.env.DB_URL ??
-    "postgresql://postgres:XXXXXXXXXXXXXXXXXXXXXXX@localhost:5432/tenant_db",
+    "postgresql://postgres:XXXXXXXXXX@localhost:5432/tenant_db",
 });
 
 const N = 100;

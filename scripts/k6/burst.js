@@ -3,7 +3,7 @@ import { Counter } from 'k6/metrics';
 import exec from 'k6/execution';
 import { baseUrl, pattern, region, postEvent, logTracking } from './common.js';
 
-const rounds = 20;
+const nRounds = 20;
 const stepS = 3;
 const vuSat = pattern === 'pg-pool' ? 4 : 30;
 
@@ -11,7 +11,7 @@ const errorCount = new Counter('request_errors');
 
 function buildScenarios() {
     const scenarios = {};
-    for (let i = 0; i < rounds; i++) {
+    for (let i = 0; i < nRounds; i++) {
         const round = i + 1;
         scenarios[`round_${round}`] = {
             executor: 'per-vu-iterations',
@@ -27,7 +27,7 @@ function buildScenarios() {
 
 function buildThresholds() {
     const thresholds = {};
-    for (let round = 1; round <= rounds; round++) {
+    for (let round = 1; round <= nRounds; round++) {
         thresholds[`http_req_failed{round:${round}}`] = ['rate>=0'];
         thresholds[`request_errors{round:${round}}`] = ['count>=0'];
     }
@@ -59,7 +59,7 @@ export function handleSummary(data) {
     }
 
     const rounds = [];
-    for (let round = 1; round <= rounds; round++) {
+    for (let round = 1; round <= nRounds; round++) {
         rounds.push({
             round,
             vus: vuSat,
